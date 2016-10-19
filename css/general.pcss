@@ -1,0 +1,49 @@
+/* General */ 
+
+:root {
+    font-size: 16px;
+    font-family: "ProximaNova";
+    --main: #7b869d;
+    --text_link: #3d98ff;
+    --title: #5c677e;
+    --main_button: #63cf3a;
+    --main: #7b869d;
+    --text_link: #3d98ff;
+    --title: #5c677e;
+    --main_button: #63cf3a;
+    --bg_blue: #6faef5;
+    --footer_bg: #4b8add;
+    --hero_body: #d4e5fd;
+    --header_link: #c6deff;
+    --footer_bg: #4b8add;
+    --from: 1;
+    --columns: 12;
+    --gutterwidth: 1%;
+    --outermargin: 2%;
+    --guttercompensation: .5%;
+    --halfgutterwidth:  .5%;
+}
+
+/*  --------------------------------------------------  Media Queries Declaration */
+
+@custom-media --tLandscape (width < 960px){
+    .container {
+        width: 92%;
+    }
+}
+@custom-media --tPortrait (width < 750px){
+    .container {
+        width: 94%;
+    }
+}
+@custom-media --mLandscape (width < 640px){
+    .container {
+        width: 96%;
+    }
+}
+@custom-media --mPortrait (width < 480px){
+    .container {
+        width: 98%;
+    }
+}
+

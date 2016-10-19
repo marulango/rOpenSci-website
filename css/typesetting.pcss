@@ -1,0 +1,98 @@
+/* Typesetting */
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-regular.eot');
+    src: url('css/fonts/proxima-nova-regular.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-regular.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-regular.woff') format('woff'),
+         url('css/fonts/proxima-nova-regular.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-regular.svg#youworkforthem') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-regular-italic.eot');
+    src: url('css/fonts/proxima-nova-regular-italic.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-regular-italic.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-regular-italic.woff') format('woff'),
+         url('css/fonts/proxima-nova-regular-italic.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-regular-italic.svg#youworkforthem') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-semibold.eot');
+    src: url('css/fonts/proxima-nova-semibold.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-semibold.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-semibold.woff') format('woff'),
+         url('css/fonts/proxima-nova-semibold.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-semibold.svg#youworkforthem') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-bold.eot');
+    src: url('css/fonts/proxima-nova-bold.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-bold.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-bold.woff') format('woff'),
+         url('css/fonts/proxima-nova-bold.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-bold.svg#youworkforthem') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* Document level adjustments */
+@media var(--tLandscape) {
+    html { font-size: 15px; }
+}
+@media var(--mPortrait) {
+    html { font-size: 13px; }
+}
+
+/* Modules will scale with document */
+.header {
+    font-size: 1.5rem;
+}
+.footer {
+    font-size: 0.75rem;
+}
+.sidebar {
+    font-size: 0.85rem;
+}
+
+/* Type will scale with modules */
+h1 {
+    font-size: 3em;
+    font-family: "ProximaNova";
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
+}
+
+nav {
+    & ul {
+        & li {
+            text-transform: uppercase;
+            display: inline;
+            & a {
+                color: var(--header_link);
+            }
+        }
+    }
+}
