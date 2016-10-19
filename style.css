@@ -1,6 +1,455 @@
-@import 'css/reset';
-@import 'css/general';
-@import 'css/grid';
-@import 'css/palette';
-@import 'css/typeworks';
-@import 'css/iconworks';
+/* Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* General */
+
+:root {
+    font-size: 16px;
+    font-family: "ProximaNova";
+}
+
+/*  --------------------------------------------------  Media Queries Declaration */
+
+/* Grid */
+
+.container {
+    padding-right: 2%;
+    padding-left: 2%;
+    display: block;
+    margin: 0 auto;
+    width: 92%;
+    max-width: 1200px;
+}
+
+.row{
+    box-sizing:border-box;
+    display:flex;
+    flex:0 1 auto;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin-right: .5%;
+    margin-left: .5%;
+}
+
+.middle-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.col-middle {
+    width: 300px;
+    height: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.col-middle-1 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-2 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-3 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-4 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-5 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-6 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-7 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-8 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-9 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-10 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-11 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-middle-12 {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.col-1 {
+  flex-basis: 8.33333%;
+  max-width: 8.33333%;
+  box-sizing: border-box;
+}
+
+.col-offset-1 {
+  margin-left: 8.33333%;
+}
+
+.col-2 {
+  flex-basis: 16.66667%;
+  max-width: 16.66667%;
+  box-sizing: border-box;
+}
+
+.col-offset-2 {
+  margin-left: 16.66667%;
+}
+
+.col-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+}
+
+.col-offset-3 {
+  margin-left: 25%;
+}
+
+.col-4 {
+  flex-basis: 33.33333%;
+  max-width: 33.33333%;
+  box-sizing: border-box;
+}
+
+.col-offset-4 {
+  margin-left: 33.33333%;
+}
+
+.col-5 {
+  flex-basis: 41.66667%;
+  max-width: 41.66667%;
+  box-sizing: border-box;
+}
+
+.col-offset-5 {
+  margin-left: 41.66667%;
+}
+
+.col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+.col-offset-6 {
+  margin-left: 50%;
+}
+
+.col-7 {
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  box-sizing: border-box;
+}
+
+.col-offset-7 {
+  margin-left: 58.33333%;
+}
+
+.col-8 {
+  flex-basis: 66.66667%;
+  max-width: 66.66667%;
+  box-sizing: border-box;
+}
+
+.col-offset-8 {
+  margin-left: 66.66667%;
+}
+
+.col-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+  box-sizing: border-box;
+}
+
+.col-offset-9 {
+  margin-left: 75%;
+}
+
+.col-10 {
+  flex-basis: 83.33333%;
+  max-width: 83.33333%;
+  box-sizing: border-box;
+}
+
+.col-offset-10 {
+  margin-left: 83.33333%;
+}
+
+.col-11 {
+  flex-basis: 91.66667%;
+  max-width: 91.66667%;
+  box-sizing: border-box;
+}
+
+.col-offset-11 {
+  margin-left: 91.66667%;
+}
+
+.col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.col-offset-12 {
+  margin-left: 100%;
+}
+
+.start {
+    justify-content: flex-start;
+    text-align: start;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.end {
+    justify-content: flex-end;
+    text-align: end;
+}
+
+.top {
+    align-items: flex-start;
+}
+
+.middle {
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+}
+
+.bottom {
+    align-items: flex-end;
+}
+
+.around {
+    justify-content: space-around;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.first {
+    order: -1;
+}
+
+.last {
+    order: 1;
+}
+
+/* Typesetting */
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-regular.eot');
+    src: url('css/fonts/proxima-nova-regular.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-regular.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-regular.woff') format('woff'),
+         url('css/fonts/proxima-nova-regular.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-regular.svg#youworkforthem') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-regular-italic.eot');
+    src: url('css/fonts/proxima-nova-regular-italic.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-regular-italic.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-regular-italic.woff') format('woff'),
+         url('css/fonts/proxima-nova-regular-italic.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-regular-italic.svg#youworkforthem') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-semibold.eot');
+    src: url('css/fonts/proxima-nova-semibold.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-semibold.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-semibold.woff') format('woff'),
+         url('css/fonts/proxima-nova-semibold.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-semibold.svg#youworkforthem') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('css/fonts/proxima-nova-bold.eot');
+    src: url('css/fonts/proxima-nova-bold.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/proxima-nova-bold.woff2') format('woff2'),
+         url('css/fonts/proxima-nova-bold.woff') format('woff'),
+         url('css/fonts/proxima-nova-bold.ttf') format('truetype'),
+         url('css/fonts/proxima-nova-bold.svg#youworkforthem') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Document level adjustments */
+
+@media var(width < 960px) {
+    html { font-size: 15px; }
+}
+
+@media var(width < 480px) {
+    html { font-size: 13px; }
+}
+
+/* Modules will scale with document */
+
+.header {
+    font-size: 1.5rem;
+}
+
+.footer {
+    font-size: 0.75rem;
+}
+
+.sidebar {
+    font-size: 0.85rem;
+}
+
+/* Type will scale with modules */
+
+h1 {
+    font-size: 3em;
+    font-family: "ProximaNova";
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
+}
+
+nav {
+}
+
+nav ul {
+}
+
+nav ul li {
+  text-transform: uppercase;
+  display: inline;
+}
+
+nav ul li a {
+  color: #c6deff;
+}
+
+/* Sections */
+
+#header {
+    position: absolute;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.hero {
+    background-color: #6faef5;
+    color: #d4e5fd;
+    display: flex
+}
+
+.hero small {
+  font-size: 14px;
+  color: #bfd8fa;
+  text-transform: uppercase;
+}
+
