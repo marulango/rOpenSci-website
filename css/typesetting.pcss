@@ -56,6 +56,10 @@
     html { font-size: 13px; }
 }
 
+body {
+    color: var(--main);
+}
+
 /* Modules will scale with document */
 .header {
     font-size: 1.5rem;
@@ -68,9 +72,12 @@
 }
 
 /* Type will scale with modules */
+h1, h2, h3, h4, .title {
+    color: var(--title);
+}
+
 h1 {
     font-size: 3em;
-    font-family: "ProximaNova";
 }
 
 h2 {
@@ -82,7 +89,8 @@ h3 {
 }
 
 p {
-    font-size: 1em;
+    font-size: 1rem;
+    line-height: 1.4rem;
 }
 
 nav {
@@ -90,8 +98,14 @@ nav {
         & li {
             text-transform: uppercase;
             display: inline;
+            font-weight: 600;
+            font-size: .8rem;
+            &:not(:last-of-type){
+                margin-right: 60px;
+            }
             & a {
                 color: var(--header_link);
+                text-decoration: none;
             }
         }
     }
