@@ -5,7 +5,6 @@ form {
 }
 
 a.button {
-    color: white;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 600;
@@ -15,9 +14,15 @@ a.button {
     &.main {
         background-color: var(--main_button);
         font-size: .8rem;
+        color: white;
     }
     &.secondary{
         background-color: var(--main_link);
         font-size: .8rem;
+        color: white;
+    }
+    &.outline {
+        border: 1px solid var(--main_button);
+        color: var(--main_button);
     }
 }
