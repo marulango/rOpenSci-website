@@ -327,6 +327,168 @@ table {
     order: 1;
 }
 
+/* Vertical Spacing */
+
+.top-1 {
+  margin-top: 5px;
+}
+
+.bottom-1 {
+  margin-bottom: 5px;
+}
+
+.top-2 {
+  margin-top: 10px;
+}
+
+.bottom-2 {
+  margin-bottom: 10px;
+}
+
+.top-3 {
+  margin-top: 15px;
+}
+
+.bottom-3 {
+  margin-bottom: 15px;
+}
+
+.top-4 {
+  margin-top: 20px;
+}
+
+.bottom-4 {
+  margin-bottom: 20px;
+}
+
+.top-5 {
+  margin-top: 25px;
+}
+
+.bottom-5 {
+  margin-bottom: 25px;
+}
+
+.top-6 {
+  margin-top: 30px;
+}
+
+.bottom-6 {
+  margin-bottom: 30px;
+}
+
+.top-7 {
+  margin-top: 35px;
+}
+
+.bottom-7 {
+  margin-bottom: 35px;
+}
+
+.top-8 {
+  margin-top: 40px;
+}
+
+.bottom-8 {
+  margin-bottom: 40px;
+}
+
+.top-9 {
+  margin-top: 45px;
+}
+
+.bottom-9 {
+  margin-bottom: 45px;
+}
+
+.top-10 {
+  margin-top: 50px;
+}
+
+.bottom-10 {
+  margin-bottom: 50px;
+}
+
+.top-11 {
+  margin-top: 55px;
+}
+
+.bottom-11 {
+  margin-bottom: 55px;
+}
+
+.top-12 {
+  margin-top: 60px;
+}
+
+.bottom-12 {
+  margin-bottom: 60px;
+}
+
+.top-13 {
+  margin-top: 65px;
+}
+
+.bottom-13 {
+  margin-bottom: 65px;
+}
+
+.top-14 {
+  margin-top: 70px;
+}
+
+.bottom-14 {
+  margin-bottom: 70px;
+}
+
+.top-15 {
+  margin-top: 75px;
+}
+
+.bottom-15 {
+  margin-bottom: 75px;
+}
+
+.top-16 {
+  margin-top: 80px;
+}
+
+.bottom-16 {
+  margin-bottom: 80px;
+}
+
+.top-17 {
+  margin-top: 85px;
+}
+
+.bottom-17 {
+  margin-bottom: 85px;
+}
+
+.top-18 {
+  margin-top: 90px;
+}
+
+.bottom-18 {
+  margin-bottom: 90px;
+}
+
+.top-19 {
+  margin-top: 95px;
+}
+
+.bottom-19 {
+  margin-bottom: 95px;
+}
+
+.top-20 {
+  margin-top: 100px;
+}
+
+.bottom-20 {
+  margin-bottom: 100px;
+}
+
 /* Typesetting */
 
 @font-face {
@@ -423,15 +585,30 @@ h3 {
     font-size: 2em;
 }
 
+h4 {
+
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
 p {
     font-size: 1rem;
     line-height: 1.4rem;
+}
+
+a {
+    text-decoration: underline;
+    color: #3d98ff;
 }
 
 nav {
 }
 
 nav ul {
+
 }
 
 nav ul li {
@@ -472,5 +649,36 @@ nav ul li a {
   font-size: 14px;
   color: #bfd8fa;
   text-transform: uppercase;
+}
+
+.donate {
+    background-color: #797f8b;
+    color: #d8dfee;
+}
+
+/* Forms */
+
+form {
+
+}
+
+a.button {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 15px 30px;
+    display: inline-block
+}
+
+a.button.main {
+  background-color: #63cf3a;
+  font-size: .8rem;
+}
+
+a.button.secondary {
+  background-color: #3d98ff;
+  font-size: .8rem;
 }
 
