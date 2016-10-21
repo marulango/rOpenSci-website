@@ -9,20 +9,28 @@ a.button {
     text-decoration: none;
     font-weight: 600;
     border-radius: 50px;
-    padding: 15px 30px;
     display: inline-block;
+    font-size: .8rem;
     &.main {
+        padding: 15px 30px;
         background-color: var(--main_button);
-        font-size: .8rem;
         color: white;
     }
     &.secondary{
+        padding: 15px 30px;
         background-color: var(--main_link);
-        font-size: .8rem;
         color: white;
     }
     &.outline {
-        border: 1px solid var(--main_button);
-        color: var(--main_button);
+        border: 1px solid;
+        padding: 12px 20px;
+        &.green {
+            color: var(--main_button);
+            border-color: var(--main_button);
+        }
+        &.blue {
+            border-color: var(--main_link);
+            color: var(--main_link);
+        }
     }
 }
