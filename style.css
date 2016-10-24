@@ -720,5 +720,13 @@ table {
 }
 
 table thead {
+  font-weight: 600;
+  background-color: #dfe3eb;
+  text-transform: uppercase;
+  color: #5c677e;
+  padding: 15px 0;
+}
 
+table thead th {
+  padding-left: 15px;
 }
