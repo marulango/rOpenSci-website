@@ -25,6 +25,39 @@
     color: var(--text_lightGray);
 }
 
-.community, .docs {
+.community, .docs, .newsletter {
     background-color: var(--bg_lightBlue);
+}
+
+.helmsley {
+    background-color: var(--bg_medBlue);
+    & p {
+        font-size: 1.5rem;
+    }
+    & i {
+        color: #f171a6;
+        font-size: 1.5rem;
+    }
+}
+
+#footer {
+    background-color: var(--bg_footer);
+    color: var(--footer_main);
+    font-size: .75rem;
+    & h5 {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    & ul {
+        & li {
+            line-height: 1.3rem;
+            & a {
+                text-decoration: none;
+                color: var(--footer_main);
+            }
+        }
+    }
+    & a {
+        color: var(--footer_link);
+    }
 }

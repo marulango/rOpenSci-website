@@ -4,16 +4,34 @@
 table {
     width: 100%;
     text-align: left;
+    font-size: .87rem;
 
     & thead {
         font-weight: 600;
         background-color: var(--table_header);
         text-transform: uppercase;
         color: var(--title);
-        padding: 15px 0;
 
-        & th {
-            padding-left: 15px;
+        & tr {
+
+            & th {
+            padding: 15px 13px;
+            }
+        }
+
+    }
+
+    & tbody {
+        & tr {
+            &:nth-child(even) {
+                background-color: var(--table_row)
+            }
+            &:last-of-type {
+                border-bottom: 1px solid var(--table_divider)
+            }
+            & td {
+                padding: 15px;
+            }
         }
     }
 }
