@@ -746,8 +746,18 @@ i {
     color: #d8dfee;
 }
 
-.community, .docs, .newsletter {
+.docs, .newsletter {
     background-color: #f5f7fd;
+}
+
+.community {
+    background-position: center;
+    background-size: cover;
+    background: #eb01a5;
+    background-repeat: no-repeat;
+    background-image: url("img/bg_community.png"); /* fallback */
+    background-image: url("img/bg_community.png"), linear-gradient(to bottom,  #f5f7fd 0%,#ffffff 100%); /* W3C */
+
 }
 
 .helmsley {
