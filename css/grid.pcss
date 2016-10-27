@@ -32,6 +32,17 @@
     height: 100vh;
 }
 
+.col {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    -webkit-flex-basis: 0;
+    flex-basis: 0;
+    max-width: 100%;
+}
+
 @for $i from 1 to 12 {
     .col-$i { 
         flex-basis: calc(100 / var(--columns) * $i)%;

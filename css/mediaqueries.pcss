@@ -45,7 +45,11 @@
         justify-content: center;
     }
 
-    @for $i from 1 to 4 {
+    .list {
+        width: 50%;
+    }
+
+    @for $i from 1 to 3 {
         .col-$i { 
             flex-basis: 50%;
             max-width: 50%;
@@ -53,7 +57,7 @@
         }
     }
 
-    @for $i from 5 to 6 {
+    @for $i from 4 to 12 {
         .col-$i { 
             flex-basis: 90%;
             max-width: 90%;
@@ -70,6 +74,14 @@
 
 @custom-media --mPortrait (max-width: 480px);
 @media screen and (orientation: portrait) and (--mPortrait) {
+    :root {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 2rem
+    }
+
+
     .container {
         width: 80%;
     }
@@ -79,13 +91,28 @@
         justify-content: center;
     }
 
-    @for $i from 1 to 12 {
+    .list {
+        width: 50%;
+        margin-top: 6vh;
+    }
+
+     @for $i from 1 to 3 {
+        .col-$i { 
+            flex-basis: 70%;
+            max-width: 70%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 4 to 12 {
         .col-$i { 
             flex-basis: 100%;
             max-width: 100%;
             box-sizing: border-box;
         }
+    }
 
+    @for $i from 1 to 12 {
         .col-offset-$i {
             margin-left: 0;
         }

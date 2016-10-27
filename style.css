@@ -103,6 +103,17 @@ table thead th {
     height: 100vh;
 }
 
+.col {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    -webkit-flex-basis: 0;
+    flex-basis: 0;
+    max-width: 100%;
+}
+
 .col-1 {
   flex-basis: 8.33333%;
   max-width: 8.33333%;
@@ -564,13 +575,8 @@ nav ul {
 
 nav ul li {
   text-transform: uppercase;
-  display: inline;
   font-weight: 600;
-  font-size: .87rem;
-}
-
-nav ul li:not(:last-of-type) {
-  margin-right: 60px;
+  font-size: .75rem;
 }
 
 nav ul li a {
@@ -750,12 +756,13 @@ form.newsletter input {
   font-size: 1rem;
   font-style: italic;
   border: 1px solid #e8edf7;
-  padding: 15px 15px 15px 40px;
+  padding: 14px 15px 15px 40px;
   border-radius: 2px;
   background-color: white;
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  background: url('img/email.svg') 10px center no-repeat white;
 }
 
 form.newsletter button {
@@ -767,17 +774,10 @@ form.newsletter button {
   background-color: #3d98ff;
   border: 0 none;
   color: white;
-  padding: 16px;
+  padding: 15px 20px;
   position: relative;
   margin-top: -47px;
   float: right;
-}
-
-form.newsletter {
-}
-
-form.newsletter input {
-  background: url('img/email.svg') 10px center no-repeat white;
 }
 
 a.button {
@@ -983,6 +983,10 @@ table tbody tr td {
         justify-content: center;
     }
 
+    .list {
+        width: 50%;
+    }
+
     .col-1 {
     flex-basis: 50%;
     max-width: 50%;
@@ -1002,8 +1006,8 @@ table tbody tr td {
   }
 
     .col-4 {
-    flex-basis: 50%;
-    max-width: 50%;
+    flex-basis: 90%;
+    max-width: 90%;
     box-sizing: border-box;
   }
 
@@ -1014,6 +1018,42 @@ table tbody tr td {
   }
 
     .col-6 {
+    flex-basis: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+    .col-7 {
+    flex-basis: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+    .col-8 {
+    flex-basis: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+    .col-9 {
+    flex-basis: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+    .col-10 {
+    flex-basis: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+    .col-11 {
+    flex-basis: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+    .col-12 {
     flex-basis: 90%;
     max-width: 90%;
     box-sizing: border-box;
@@ -1069,6 +1109,14 @@ table tbody tr td {
 }
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
+    :root {
+        font-size: 18px;
+    }
+    h2 {
+        font-size: 2rem
+    }
+
+
     .container {
         width: 80%;
     }
@@ -1078,7 +1126,78 @@ table tbody tr td {
         justify-content: center;
     }
 
-    .col-1 {
+    .list {
+        width: 50%;
+        margin-top: 6vh;
+    }
+
+     .col-1 {
+    flex-basis: 70%;
+    max-width: 70%;
+    box-sizing: border-box;
+  }
+
+     .col-2 {
+    flex-basis: 70%;
+    max-width: 70%;
+    box-sizing: border-box;
+  }
+
+     .col-3 {
+    flex-basis: 70%;
+    max-width: 70%;
+    box-sizing: border-box;
+  }
+
+    .col-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-5 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-6 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-7 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-8 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-9 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-10 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-11 {
+    flex-basis: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+    .col-12 {
     flex-basis: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -1088,110 +1207,44 @@ table tbody tr td {
     margin-left: 0;
   }
 
-    .col-2 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
     .col-offset-2 {
     margin-left: 0;
-  }
-
-    .col-3 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
     .col-offset-3 {
     margin-left: 0;
   }
 
-    .col-4 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
     .col-offset-4 {
     margin-left: 0;
-  }
-
-    .col-5 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
     .col-offset-5 {
     margin-left: 0;
   }
 
-    .col-6 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
     .col-offset-6 {
     margin-left: 0;
-  }
-
-    .col-7 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
     .col-offset-7 {
     margin-left: 0;
   }
 
-    .col-8 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
     .col-offset-8 {
     margin-left: 0;
-  }
-
-    .col-9 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
     .col-offset-9 {
     margin-left: 0;
   }
 
-    .col-10 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
     .col-offset-10 {
     margin-left: 0;
   }
 
-    .col-11 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
     .col-offset-11 {
     margin-left: 0;
-  }
-
-    .col-12 {
-    flex-basis: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
     .col-offset-12 {
