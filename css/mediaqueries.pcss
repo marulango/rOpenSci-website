@@ -1,0 +1,122 @@
+/*  --------------------------------------------------  Media Queries Declaration */
+
+@custom-media --tPortrait (max-width: 950px);
+@media screen and (orientation: portrait) and (--tPortrait) {
+    .container {
+        width: 96%;
+    }
+
+    .row {
+        text-align: center;
+        justify-content: center;
+    }
+
+    @for $i from 1 to 4 {
+        .col-$i { 
+            flex-basis: 50%;
+            max-width: 50%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 5 to 6 {
+        .col-$i { 
+            flex-basis: 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 1 to 12 {
+        .col-offset-$i {
+            margin-left: 0;
+        }
+    }
+}
+
+@custom-media --tPortrait (max-width: 700px);
+@media screen and (orientation: portrait) and (--tPortrait) {
+    .container {
+        width: 96%;
+    }
+
+    .row {
+        text-align: center;
+        justify-content: center;
+    }
+
+    @for $i from 1 to 4 {
+        .col-$i { 
+            flex-basis: 50%;
+            max-width: 50%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 5 to 6 {
+        .col-$i { 
+            flex-basis: 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 1 to 12 {
+        .col-offset-$i {
+            margin-left: 0;
+        }
+    }
+}
+
+@custom-media --mPortrait (max-width: 480px);
+@media screen and (orientation: portrait) and (--mPortrait) {
+    .container {
+        width: 80%;
+    }
+
+    .row {
+        text-align: center;
+        justify-content: center;
+    }
+
+    @for $i from 1 to 12 {
+        .col-$i { 
+            flex-basis: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .col-offset-$i {
+            margin-left: 0;
+        }
+    }
+}
+
+@custom-media --mLandscape (max-width: 640px);
+@media screen and (orientation: landscape) and (--mLandscape) {
+    .container {
+        width: 92%;
+    }
+
+    @for $i from 1 to 4 {
+        .col-$i { 
+            flex-basis: 50%;
+            max-width: 50%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 5 to 6 {
+        .col-$i { 
+            flex-basis: 90%;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+    }
+
+    @for $i from 1 to 12 {
+        .col-offset-$i {
+            margin-left: 0;
+        }
+    }
+}
