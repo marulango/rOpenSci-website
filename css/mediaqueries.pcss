@@ -1,4 +1,7 @@
 /*  --------------------------------------------------  Media Queries Declaration */
+@-ms-viewport{
+  width: device-width;
+}
 
 @custom-media --tPortrait (max-width: 950px);
 @media screen and (orientation: portrait) and (--tPortrait) {
@@ -9,6 +12,14 @@
     .row {
         text-align: center;
         justify-content: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem
     }
 
     @for $i from 1 to 4 {
@@ -34,10 +45,16 @@
     }
 }
 
-@custom-media --tPortrait (max-width: 700px);
+@custom-media --tPortrait (max-width: 736px);
 @media screen and (orientation: portrait) and (--tPortrait) {
     .container {
-        width: 96%;
+        width: 90%;
+    }
+
+    .middle-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
     }
 
     .row {
@@ -59,8 +76,8 @@
 
     @for $i from 4 to 12 {
         .col-$i { 
-            flex-basis: 90%;
-            max-width: 90%;
+            flex-basis: 100%;
+            max-width: 100%;
             box-sizing: border-box;
         }
     }
@@ -70,20 +87,62 @@
             margin-left: 0;
         }
     }
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
 }
 
-@custom-media --mPortrait (max-width: 480px);
+@custom-media --mPortrait (max-width: 320px);
 @media screen and (orientation: portrait) and (--mPortrait) {
     :root {
-        font-size: 18px;
+        font-size: 16px;
     }
+
+    h1 {
+        font-size: 3rem;
+    }
+
     h2 {
         font-size: 2rem
     }
 
-
     .container {
-        width: 80%;
+        width: 90%;
+    }
+
+    .middle-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
     }
 
     .row {
@@ -96,7 +155,31 @@
         margin-top: 6vh;
     }
 
-     @for $i from 1 to 3 {
+    #footer {
+        & .row {
+            justify-content: flex-start;
+            text-align: start;
+
+            & .col-1{
+                max-width: 50%;
+                flex-basis: 50%;
+            }
+
+            & .col-2 {
+                max-width: 50%;
+                flex-basis: 50%;
+            }
+        }
+    }
+
+    nav ul li {
+        font-size: .75rem;
+        &:not(:last-child){
+            margin-right: 15px;
+        }
+    }
+
+     @for $i from 1 to 2 {
         .col-$i { 
             flex-basis: 70%;
             max-width: 70%;
@@ -104,7 +187,7 @@
         }
     }
 
-    @for $i from 4 to 12 {
+    @for $i from 3 to 12 {
         .col-$i { 
             flex-basis: 100%;
             max-width: 100%;
@@ -117,12 +200,63 @@
             margin-left: 0;
         }
     }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+
 }
 
-@custom-media --mLandscape (max-width: 640px);
+@custom-media --mLandscape (max-width: 736px);
 @media screen and (orientation: landscape) and (--mLandscape) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem
+    }
+
     .container {
-        width: 92%;
+        width: 90%;
+    }
+
+    .middle-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+    .hero {
+        height: 120vh;
     }
 
     @for $i from 1 to 4 {
@@ -146,4 +280,37 @@
             margin-left: 0;
         }
     }
+/* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+
 }

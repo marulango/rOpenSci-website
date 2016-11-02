@@ -1,11 +1,7 @@
 /* Grid */
 
 .container {
-    padding-right: var(--outermargin);
-    padding-left: var(--outermargin);
-    display: block;
     margin: 0 auto;
-    width: 92%;
     max-width: 1200px;
 }
 
@@ -15,12 +11,10 @@
     flex:0 1 auto;
     flex-direction:row;
     flex-wrap:wrap;
-    margin-right: var(--guttercompensation);
-    margin-left: var(--guttercompensation);
 }
 
-
 .middle-container {
+    margin: 0 auto;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -44,16 +38,25 @@
 }
 
 @for $i from 1 to 12 {
+    .col-$i {
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        padding-left: .25%;
+        padding-right: .25%; 
+    }
+}
+
+@for $i from 1 to 12 {
     .col-$i { 
         flex-basis: calc(100 / var(--columns) * $i)%;
         max-width: calc(100 / var(--columns) * $i)%;
-        box-sizing: border-box;
     }
 
     .col-offset-$i {
         margin-left: calc(100 / var(--columns) * $i)%;
     }
 }
+
 
 .start {
     justify-content: flex-start;

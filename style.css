@@ -64,6 +64,7 @@ table thead th {
     font-size: 16px;
     font-family: "ProximaNova";
     font-weight: 500;
+    line-height: 22px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -73,11 +74,7 @@ table thead th {
 /* Grid */
 
 .container {
-    padding-right: 2%;
-    padding-left: 2%;
-    display: block;
     margin: 0 auto;
-    width: 92%;
     max-width: 1200px;
 }
 
@@ -87,11 +84,10 @@ table thead th {
     flex:0 1 auto;
     flex-direction:row;
     flex-wrap:wrap;
-    margin-right: .5%;
-    margin-left: .5%;
 }
 
 .middle-container {
+    margin: 0 auto;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -115,9 +111,92 @@ table thead th {
 }
 
 .col-1 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-2 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-3 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-4 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-5 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-6 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-7 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-8 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-9 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-10 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-11 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-12 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-left: .25%;
+  padding-right: .25%;
+}
+
+.col-1 {
   flex-basis: 8.33333%;
   max-width: 8.33333%;
-  box-sizing: border-box;
 }
 
 .col-offset-1 {
@@ -127,7 +206,6 @@ table thead th {
 .col-2 {
   flex-basis: 16.66667%;
   max-width: 16.66667%;
-  box-sizing: border-box;
 }
 
 .col-offset-2 {
@@ -137,7 +215,6 @@ table thead th {
 .col-3 {
   flex-basis: 25%;
   max-width: 25%;
-  box-sizing: border-box;
 }
 
 .col-offset-3 {
@@ -147,7 +224,6 @@ table thead th {
 .col-4 {
   flex-basis: 33.33333%;
   max-width: 33.33333%;
-  box-sizing: border-box;
 }
 
 .col-offset-4 {
@@ -157,7 +233,6 @@ table thead th {
 .col-5 {
   flex-basis: 41.66667%;
   max-width: 41.66667%;
-  box-sizing: border-box;
 }
 
 .col-offset-5 {
@@ -167,7 +242,6 @@ table thead th {
 .col-6 {
   flex-basis: 50%;
   max-width: 50%;
-  box-sizing: border-box;
 }
 
 .col-offset-6 {
@@ -177,7 +251,6 @@ table thead th {
 .col-7 {
   flex-basis: 58.33333%;
   max-width: 58.33333%;
-  box-sizing: border-box;
 }
 
 .col-offset-7 {
@@ -187,7 +260,6 @@ table thead th {
 .col-8 {
   flex-basis: 66.66667%;
   max-width: 66.66667%;
-  box-sizing: border-box;
 }
 
 .col-offset-8 {
@@ -197,7 +269,6 @@ table thead th {
 .col-9 {
   flex-basis: 75%;
   max-width: 75%;
-  box-sizing: border-box;
 }
 
 .col-offset-9 {
@@ -207,7 +278,6 @@ table thead th {
 .col-10 {
   flex-basis: 83.33333%;
   max-width: 83.33333%;
-  box-sizing: border-box;
 }
 
 .col-offset-10 {
@@ -217,7 +287,6 @@ table thead th {
 .col-11 {
   flex-basis: 91.66667%;
   max-width: 91.66667%;
-  box-sizing: border-box;
 }
 
 .col-offset-11 {
@@ -227,7 +296,6 @@ table thead th {
 .col-12 {
   flex-basis: 100%;
   max-width: 100%;
-  box-sizing: border-box;
 }
 
 .col-offset-12 {
@@ -492,15 +560,6 @@ table thead th {
     font-style: normal;
 }
 
-/* Document level adjustments 
-@media var(--tLandscape) {
-    html { font-size: 15px; }
-}
-@media var(--mPortrait) {
-    html { font-size: 13px; }
-}
-*/
-
 body {
     color: #7b869d;
 }
@@ -515,10 +574,6 @@ body {
     font-size: 0.75rem;
 }
 
-.sidebar {
-    font-size: 0.85rem;
-}
-
 /* Type will scale with modules */
 
 h1, h2, h3, h4, .title {
@@ -528,15 +583,18 @@ h1, h2, h3, h4, .title {
 h1 {
     font-size: 4em;
     font-weight: 700;
+    line-height: 1em;
 }
 
 h2 {
     font-size: 3em;
+    line-height: 1em;
     font-weight: 700;
 }
 
 h3 {
     font-size: 2.25em;
+    line-height: 1em;
     font-weight: 700;
 }
 
@@ -598,6 +656,11 @@ nav ul li a {
 
 }
 
+i {
+    font-family: "ropensci";
+    font-style: normal;
+}
+
 [data-icon]:before {
   font-family: "ropensci" !important;
   content: attr(data-icon);
@@ -648,9 +711,40 @@ nav ul li a {
   content: "\66";
 }
 
-i {
-    font-family: "ropensci";
-    font-style: normal;
+.icon-caret-down:before {
+  content: "\67";
+}
+
+.icon-caret-left:before {
+  content: "\68";
+}
+
+.icon-caret-right:before {
+  content: "\69";
+}
+
+.icon-caret-up:before {
+  content: "\6a";
+}
+
+.icon-vimeo:before {
+  content: "\6b";
+}
+
+.icon-github:before {
+  content: "\6c";
+}
+
+.icon-id:before {
+  content: "\6d";
+}
+
+.icon-message:before {
+  content: "\6e";
+}
+
+.icon-twitter:before {
+  content: "\6f";
 }
 
 /* Sections */
@@ -687,18 +781,20 @@ i {
 }
 
 .list {
-    width: 67%;
+    padding: 15px 0
+}
+
+.list img {
+  width: 67%;
 }
 
 .community {
-    height: 80vh;
     background-position: center;
-    background-size: cover;
-    background: #eb01a5;
+    background: #f5f7fd;
     background-repeat: no-repeat;
     background-image: url("img/bg_community.png"); /* fallback */
-    background-image: url("img/bg_community.png"), linear-gradient(to bottom,  #f5f7fd 0%,#ffffff 100%); /* W3C */
-
+    background-image: url("img/bg_community.png"), linear-gradient(to bottom,  #f5f7fd 0%,#ffffff 50%); /* W3C */
+    background-size: cover;
 }
 
 .helmsley {
@@ -707,6 +803,7 @@ i {
 
 .helmsley p {
   font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .helmsley i {
@@ -718,6 +815,16 @@ i {
     background-color: #4b8add;
     color: #aac9f3;
     font-size: .75rem
+}
+
+#footer .divider {
+  border-top: 1px solid #5595e8;
+}
+
+#footer .icon {
+  width: 35px;
+  font-size: 1rem;
+  display: inline-block;
 }
 
 #footer h5 {
@@ -747,6 +854,51 @@ form {
     width: 100%
 }
 
+form input {
+  font-family: "ProximaNova";
+  color: #7b869d;
+  font-size: 1rem;
+  font-style: italic;
+  border: 1px solid #e8edf7;
+  padding: 13px 15px 15px 40px;
+  border-radius: 2px;
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+form textarea {
+  width: 100%;
+  font-family: "ProximaNova";
+  color: #7b869d;
+  font-size: 1rem;
+  padding: 15px 15px 15px 40px;
+  min-height: 10vh;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #e8edf7;
+  resize: none;
+}
+
+form button {
+  font-family: "ProximaNova";
+  border-radius: 2px;
+  font-size: .87rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 0 none;
+  color: white;
+  padding: 15px 20px;
+}
+
+form button.main {
+  background-color: #63cf3a;
+}
+
+form button.alt {
+  background-color: #3d98ff;
+}
+
 form.newsletter {
 }
 
@@ -756,13 +908,14 @@ form.newsletter input {
   font-size: 1rem;
   font-style: italic;
   border: 1px solid #e8edf7;
-  padding: 14px 15px 15px 40px;
+  padding: 13px 15px 15px 40px;
   border-radius: 2px;
   background-color: white;
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  background: url('img/email.svg') 10px center no-repeat white;
+  background: url('img/email.svg') 15px center no-repeat white;
+  background-size: 15px;
 }
 
 form.newsletter button {
@@ -776,7 +929,7 @@ form.newsletter button {
   color: white;
   padding: 15px 20px;
   position: relative;
-  margin-top: -47px;
+  margin-top: -45px;
   float: right;
 }
 
@@ -878,7 +1031,11 @@ table tbody tr td {
 
 /*  --------------------------------------------------  Media Queries Declaration */
 
-@media screen and (orientation: portrait) and (max-width: 700px) {
+@-ms-viewport{
+  width: device-width;
+}
+
+@media screen and (orientation: portrait) and (max-width: 736px) {
     .container {
         width: 96%;
     }
@@ -886,6 +1043,14 @@ table tbody tr td {
     .row {
         text-align: center;
         justify-content: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem
     }
 
     .col-1 {
@@ -973,9 +1138,15 @@ table tbody tr td {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 700px) {
+@media screen and (orientation: portrait) and (max-width: 736px) {
     .container {
-        width: 96%;
+        width: 90%;
+    }
+
+    .middle-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
     }
 
     .row {
@@ -1006,56 +1177,56 @@ table tbody tr td {
   }
 
     .col-4 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-5 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-6 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-7 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-8 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-9 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-10 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-11 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
     .col-12 {
-    flex-basis: 90%;
-    max-width: 90%;
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
@@ -1106,19 +1277,61 @@ table tbody tr td {
     .col-offset-12 {
     margin-left: 0;
   }
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
 }
 
-@media screen and (orientation: portrait) and (max-width: 480px) {
+@media screen and (orientation: portrait) and (max-width: 320px) {
     :root {
-        font-size: 18px;
+        font-size: 16px;
     }
+
+    h1 {
+        font-size: 3rem;
+    }
+
     h2 {
         font-size: 2rem
     }
 
-
     .container {
-        width: 80%;
+        width: 90%;
+    }
+
+    .middle-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
     }
 
     .row {
@@ -1130,6 +1343,32 @@ table tbody tr td {
         width: 50%;
         margin-top: 6vh;
     }
+
+    #footer {
+    }
+
+    #footer .row {
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+    #footer .row .col-1 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+
+    #footer .row .col-2 {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+
+    nav ul li {
+        font-size: .75rem
+    }
+
+    nav ul li:not(:last-child) {
+    margin-right: 15px;
+  }
 
      .col-1 {
     flex-basis: 70%;
@@ -1143,9 +1382,9 @@ table tbody tr td {
     box-sizing: border-box;
   }
 
-     .col-3 {
-    flex-basis: 70%;
-    max-width: 70%;
+    .col-3 {
+    flex-basis: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
@@ -1250,11 +1489,62 @@ table tbody tr td {
     .col-offset-12 {
     margin-left: 0;
   }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+
 }
 
-@media screen and (orientation: landscape) and (max-width: 640px) {
+@media screen and (orientation: landscape) and (max-width: 736px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem
+    }
+
     .container {
-        width: 92%;
+        width: 90%;
+    }
+
+    .middle-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+    .hero {
+        height: 120vh;
     }
 
     .col-1 {
@@ -1340,4 +1630,37 @@ table tbody tr td {
     .col-offset-12 {
     margin-left: 0;
   }
+/* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+
 }

@@ -2,6 +2,48 @@
 
 form {
     width: 100%;
+
+    & input {
+        font-family: "ProximaNova";
+        color: var(--main);
+        font-size: 1rem;
+        font-style: italic;
+        border: 1px solid var(--form_border);
+        padding: 13px 15px 15px 40px;
+        border-radius: 2px;
+        background-color: white;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    & textarea {
+        width: 100%;
+        font-family: "ProximaNova";
+        color: var(--main);
+        font-size: 1rem;
+        padding: 15px 15px 15px 40px;
+        min-height: 10vh;
+        box-sizing: border-box;
+        border-radius: 2px;
+        border: 1px solid var(--form_border);
+        resize: none;
+    }
+    & button {
+        font-family: "ProximaNova";
+        border-radius: 2px;
+        font-size: .87rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: 0 none;
+        color: white;
+        padding: 15px 20px;
+        &.main {
+            background-color: var(--main_button);
+        }
+        &.alt {
+            background-color: var(--main_link);
+        }
+    }
+
     &.newsletter {
         & input {
             font-family: "ProximaNova";
@@ -9,13 +51,14 @@ form {
             font-size: 1rem;
             font-style: italic;
             border: 1px solid var(--form_border);
-            padding: 14px 15px 15px 40px;
+            padding: 13px 15px 15px 40px;
             border-radius: 2px;
             background-color: white;
             box-sizing: border-box;
             position: relative;
             width: 100%;
-            background: url('img/email.svg') 10px center no-repeat white;
+            background: url('img/email.svg') 15px center no-repeat white;
+            background-size: 15px;
         }
 
         & button {
@@ -29,7 +72,7 @@ form {
             color: white;
             padding: 15px 20px;
             position: relative;
-            margin-top: -47px;
+            margin-top: -45px;
             float: right;
         }
     }

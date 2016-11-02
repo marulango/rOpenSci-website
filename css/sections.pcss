@@ -30,24 +30,26 @@
 }
 
 .list {
-    width: 67%;
+    padding: 15px 0;
+    & img {
+        width: 67%;
+    }
 }
 
 .community {
-    height: 80vh;
     background-position: center;
-    background-size: cover;
-    background: #eb01a5;
+    background: var(--bg_lightBlue);
     background-repeat: no-repeat;
     background-image: url("img/bg_community.png"); /* fallback */
-    background-image: url("img/bg_community.png"), linear-gradient(to bottom,  #f5f7fd 0%,#ffffff 100%); /* W3C */
-
+    background-image: url("img/bg_community.png"), linear-gradient(to bottom,  #f5f7fd 0%,#ffffff 50%); /* W3C */
+    background-size: cover;
 }
 
 .helmsley {
     background-color: var(--bg_medBlue);
     & p {
         font-size: 1.5rem;
+        line-height: 2rem;
     }
     & i {
         color: #f171a6;
@@ -61,6 +63,14 @@
     background-color: var(--bg_footer);
     color: var(--footer_main);
     font-size: .75rem;
+    & .divider {
+        border-top: 1px solid #5595e8;
+    }
+    & .icon {
+        width: 35px;
+        font-size: 1rem;
+        display: inline-block;
+    }
     & h5 {
         text-transform: uppercase;
         font-weight: 600;

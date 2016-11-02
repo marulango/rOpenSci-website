@@ -48,16 +48,6 @@
 }
 
 
-/* Document level adjustments 
-@media var(--tLandscape) {
-    html { font-size: 15px; }
-}
-@media var(--mPortrait) {
-    html { font-size: 13px; }
-}
-*/
-
-
 body {
     color: var(--main);
 }
@@ -69,9 +59,6 @@ body {
 .footer {
     font-size: 0.75rem;
 }
-.sidebar {
-    font-size: 0.85rem;
-}
 
 /* Type will scale with modules */
 h1, h2, h3, h4, .title {
@@ -81,15 +68,18 @@ h1, h2, h3, h4, .title {
 h1 {
     font-size: 4em;
     font-weight: 700;
+    line-height: 1em;
 }
 
 h2 {
     font-size: 3em;
+    line-height: 1em;
     font-weight: 700;
 }
 
 h3 {
     font-size: 2.25em;
+    line-height: 1em;
     font-weight: 700;
 }
 h4 {
@@ -148,6 +138,11 @@ nav {
 
 }
 
+i {
+    font-family: "ropensci";
+    font-style: normal;
+}
+
 [data-icon]:before {
   font-family: "ropensci" !important;
   content: attr(data-icon);
@@ -192,8 +187,30 @@ nav {
 .icon-video:before {
   content: "\66";
 }
-
-i {
-    font-family: "ropensci";
-    font-style: normal;
+.icon-caret-down:before {
+  content: "\67";
+}
+.icon-caret-left:before {
+  content: "\68";
+}
+.icon-caret-right:before {
+  content: "\69";
+}
+.icon-caret-up:before {
+  content: "\6a";
+}
+.icon-vimeo:before {
+  content: "\6b";
+}
+.icon-github:before {
+  content: "\6c";
+}
+.icon-id:before {
+  content: "\6d";
+}
+.icon-message:before {
+  content: "\6e";
+}
+.icon-twitter:before {
+  content: "\6f";
 }
