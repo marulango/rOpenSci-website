@@ -516,10 +516,10 @@ table thead th {
     font-family: 'ProximaNova';
     src: url('css/fonts/proxima-nova-regular.eot');
     src: url('css/fonts/proxima-nova-regular.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/proxima-nova-regular.woff2') format('woff2'),
-         url('css/fonts/proxima-nova-regular.woff') format('woff'),
-         url('css/fonts/proxima-nova-regular.ttf') format('truetype'),
-         url('css/fonts/proxima-nova-regular.svg#youworkforthem') format('svg');
+    url('css/fonts/proxima-nova-regular.woff2') format('woff2'),
+    url('css/fonts/proxima-nova-regular.woff') format('woff'),
+    url('css/fonts/proxima-nova-regular.ttf') format('truetype'),
+    url('css/fonts/proxima-nova-regular.svg#youworkforthem') format('svg');
     font-weight: 500;
     font-style: normal;
 }
@@ -528,10 +528,10 @@ table thead th {
     font-family: 'ProximaNova';
     src: url('css/fonts/proxima-nova-regular-italic.eot');
     src: url('css/fonts/proxima-nova-regular-italic.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/proxima-nova-regular-italic.woff2') format('woff2'),
-         url('css/fonts/proxima-nova-regular-italic.woff') format('woff'),
-         url('css/fonts/proxima-nova-regular-italic.ttf') format('truetype'),
-         url('css/fonts/proxima-nova-regular-italic.svg#youworkforthem') format('svg');
+    url('css/fonts/proxima-nova-regular-italic.woff2') format('woff2'),
+    url('css/fonts/proxima-nova-regular-italic.woff') format('woff'),
+    url('css/fonts/proxima-nova-regular-italic.ttf') format('truetype'),
+    url('css/fonts/proxima-nova-regular-italic.svg#youworkforthem') format('svg');
     font-weight: 500;
     font-style: italic;
 }
@@ -540,10 +540,10 @@ table thead th {
     font-family: 'ProximaNova';
     src: url('css/fonts/proxima-nova-semibold.eot');
     src: url('css/fonts/proxima-nova-semibold.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/proxima-nova-semibold.woff2') format('woff2'),
-         url('css/fonts/proxima-nova-semibold.woff') format('woff'),
-         url('css/fonts/proxima-nova-semibold.ttf') format('truetype'),
-         url('css/fonts/proxima-nova-semibold.svg#youworkforthem') format('svg');
+    url('css/fonts/proxima-nova-semibold.woff2') format('woff2'),
+    url('css/fonts/proxima-nova-semibold.woff') format('woff'),
+    url('css/fonts/proxima-nova-semibold.ttf') format('truetype'),
+    url('css/fonts/proxima-nova-semibold.svg#youworkforthem') format('svg');
     font-weight: 600;
     font-style: normal;
 }
@@ -552,10 +552,10 @@ table thead th {
     font-family: 'ProximaNova';
     src: url('css/fonts/proxima-nova-bold.eot');
     src: url('css/fonts/proxima-nova-bold.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/proxima-nova-bold.woff2') format('woff2'),
-         url('css/fonts/proxima-nova-bold.woff') format('woff'),
-         url('css/fonts/proxima-nova-bold.ttf') format('truetype'),
-         url('css/fonts/proxima-nova-bold.svg#youworkforthem') format('svg');
+    url('css/fonts/proxima-nova-bold.woff2') format('woff2'),
+    url('css/fonts/proxima-nova-bold.woff') format('woff'),
+    url('css/fonts/proxima-nova-bold.ttf') format('truetype'),
+    url('css/fonts/proxima-nova-bold.svg#youworkforthem') format('svg');
     font-weight: 700;
     font-style: normal;
 }
@@ -642,17 +642,31 @@ nav ul li a {
   text-decoration: none;
 }
 
+label {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 600
+
+}
+
+label .github {
+}
+
+label .github .available {
+  background-color: ;
+}
+
 /* ----------------------------------------------------------- Icon Font ------- */
 
 @font-face {
-  font-family: "ropensci";
-  src:url("css/fonts/ropensci.eot");
-  src:url("css/fonts/ropensci.eot?#iefix") format("embedded-opentype"),
+    font-family: "ropensci";
+    src:url("css/fonts/ropensci.eot");
+    src:url("css/fonts/ropensci.eot?#iefix") format("embedded-opentype"),
     url("css/fonts/ropensci.woff") format("woff"),
     url("css/fonts/ropensci.ttf") format("truetype"),
     url("css/fonts/ropensci.svg#ropensci") format("svg");
-  font-weight: normal;
-  font-style: normal;
+    font-weight: normal;
+    font-style: normal;
 
 }
 
@@ -662,97 +676,96 @@ i {
 }
 
 [data-icon]:before {
-  font-family: "ropensci" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "ropensci" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "ropensci" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "ropensci" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-email:before {
-  content: "\61";
+    content: "\61";
 }
 
 .icon-gift:before {
-  content: "\62";
+    content: "\62";
 }
 
 .icon-heart:before {
-  content: "\63";
+    content: "\63";
 }
 
 .icon-notebook:before {
-  content: "\64";
+    content: "\64";
 }
 
 .icon-sign:before {
-  content: "\65";
+    content: "\65";
 }
 
 .icon-video:before {
-  content: "\66";
+    content: "\66";
 }
 
 .icon-caret-down:before {
-  content: "\67";
+    content: "\67";
 }
 
 .icon-caret-left:before {
-  content: "\68";
+    content: "\68";
 }
 
 .icon-caret-right:before {
-  content: "\69";
+    content: "\69";
 }
 
 .icon-caret-up:before {
-  content: "\6a";
+    content: "\6a";
 }
 
 .icon-vimeo:before {
-  content: "\6b";
+    content: "\6b";
 }
 
 .icon-github:before {
-  content: "\6c";
+    content: "\6c";
 }
 
 .icon-id:before {
-  content: "\6d";
+    content: "\6d";
 }
 
 .icon-message:before {
-  content: "\6e";
+    content: "\6e";
 }
 
 .icon-twitter:before {
-  content: "\6f";
+    content: "\6f";
 }
 
 /* Sections */
 
 #header {
-    position: absolute;
-    width: 100%;
     padding: 40px 0;
+    background-color: #6faef5;
 }
 
 .hero {
@@ -766,18 +779,30 @@ i {
 }
 
 .hero small {
-  font-size: 14px;
+  font-size: .87rem;
   color: #bfd8fa;
   text-transform: uppercase;
 }
 
 .donate {
     background-color: #797f8b;
-    color: #d8dfee;
+    color: #d8dfee
+}
+
+.donate i {
+  font-size: 1.5rem;
 }
 
 .docs, .newsletter {
     background-color: #f5f7fd;
+}
+
+.docs {
+}
+
+.docs i {
+  color: #3d98ff;
+  font-size: .87rem;
 }
 
 .list {
@@ -822,7 +847,7 @@ i {
 }
 
 #footer .icon {
-  width: 35px;
+  width: 30.6%;
   font-size: 1rem;
   display: inline-block;
 }
@@ -1154,6 +1179,10 @@ table tbody tr td {
         justify-content: center;
     }
 
+    .between {
+        justify-content: space-between;
+    }
+
     .list {
         width: 50%;
     }
@@ -1277,24 +1306,25 @@ table tbody tr td {
     .col-offset-12 {
     margin-left: 0;
   }
-    /* Force table to not be like tables anymore */
+
+        /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr { 
         display: block; 
     }
     
-    /* Hide table headers (but not display: none;, for accessibility) */
+    /* Hide table headers (but not display: none;, because accessibility) */
     thead tr { 
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
     
-    tr { border: 1px solid #ccc; }
-    
+    tr { 
+        border: 1px solid #edf1f8;
+    }
+
     td { 
         /* Behave  like a "row" */
-        border: none;
-        border-bottom: 1px solid #eee; 
         position: relative;
         padding-left: 50%; 
     }
@@ -1309,6 +1339,7 @@ table tbody tr td {
         padding-right: 10px; 
         white-space: nowrap;
     }
+
 }
 
 @media screen and (orientation: portrait) and (max-width: 320px) {
@@ -1494,20 +1525,20 @@ table tbody tr td {
     table, thead, tbody, th, td, tr { 
         display: block; 
     }
-    
-    /* Hide table headers (but not display: none;, for accessibility) */
+
+    /* Hide table headers (but not display: none;, because accessibility) */
     thead tr { 
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
     
-    tr { border: 1px solid #ccc; }
-    
+    tr { 
+        border: 1px solid #edf1f8;
+    }
+
     td { 
         /* Behave  like a "row" */
-        border: none;
-        border-bottom: 1px solid #eee; 
         position: relative;
         padding-left: 50%; 
     }
@@ -1630,24 +1661,25 @@ table tbody tr td {
     .col-offset-12 {
     margin-left: 0;
   }
-/* Force table to not be like tables anymore */
+
+    /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr { 
         display: block; 
     }
     
-    /* Hide table headers (but not display: none;, for accessibility) */
+    /* Hide table headers (but not display: none;, because accessibility) */
     thead tr { 
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
     
-    tr { border: 1px solid #ccc; }
-    
+    tr { 
+        border: 1px solid #edf1f8;
+    }
+
     td { 
         /* Behave  like a "row" */
-        border: none;
-        border-bottom: 1px solid #eee; 
         position: relative;
         padding-left: 50%; 
     }
@@ -1659,7 +1691,6 @@ table tbody tr td {
         top: 6px;
         left: 6px;
         width: 45%; 
-        padding-right: 10px; 
         white-space: nowrap;
     }
 

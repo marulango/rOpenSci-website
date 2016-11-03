@@ -1,9 +1,8 @@
 /* Sections */
 
 #header {
-    position: absolute;
-    width: 100%;
     padding: 40px 0;
+    background-color: var(--bg_blue);
 }
 
 .hero {
@@ -14,7 +13,7 @@
         color: white;
     }
     & small {
-        font-size: 14px;
+        font-size: .87rem;
         color: #bfd8fa;
         text-transform: uppercase;
     }
@@ -23,10 +22,20 @@
 .donate {
     background-color: var(--bg_lightGray);
     color: var(--text_lightGray);
+    & i {
+        font-size: 1.5rem;
+    }
 }
 
 .docs, .newsletter {
     background-color: var(--bg_lightBlue);
+}
+
+.docs {
+    & i {
+        color: var(--main_link);
+        font-size: .87rem;
+    }
 }
 
 .list {
@@ -67,7 +76,7 @@
         border-top: 1px solid #5595e8;
     }
     & .icon {
-        width: 35px;
+        width: 30.6%;
         font-size: 1rem;
         display: inline-block;
     }
