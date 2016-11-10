@@ -96,8 +96,11 @@ p {
     line-height: 1.4rem;
 }
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--main_link);
+    &:hover {
+        text-decoration: underline;
+    }
 
     &.external {
         display: inline-block;
@@ -106,6 +109,7 @@ a {
         margin-top: 20px;
     }
 }
+
 nav {
 
     & ul {
@@ -124,16 +128,55 @@ nav {
     }
 }
 
-label {
+.label {
     text-transform: uppercase;
-    font-size: .75rem;
+    font-size: .68rem;
     font-weight: 600;
-    & .github {
-        & .available {
-            background-color: 
-        }
+    border-radius: 3px;
+    padding: 0 6px;
+    line-height: 1.2rem;
+    float: left;
+    &.icon-github {
+        font-size: 1.2rem;
+        margin-left: 5px;
+        padding: 0;
+    }
+    &.nocran {
+        background-color: var(--table_header);
+    }
+    &.bioc {
+        background-color: var(--main_link);
     }
 
+}
+
+.earlydev {
+    padding: 2px 10px;
+    line-height: 1rem;
+    border-radius: 2px;
+    display: inherit;
+    font-size: .60rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--tag_earlydev);
+    color: var(--tag_earlytext);
+}
+
+a[href^="https://cran"] span {
+    background-color: var(--main_button);
+}
+
+a[href^="https://git"] span {
+    color: var(--main_button);
+}
+
+
+td:last-child { 
+    padding: 15px 5px;
+    & a {
+        text-decoration: none;
+        color: white;
+    }
 }
 
 /* ----------------------------------------------------------- Icon Font ------- */

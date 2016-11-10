@@ -3,18 +3,28 @@
 form {
     width: 100%;
 
-    & input {
-        font-family: "ProximaNova";
-        color: var(--main);
-        font-size: 1rem;
-        font-style: italic;
-        border: 1px solid var(--form_border);
-        padding: 13px 15px 15px 40px;
-        border-radius: 2px;
-        background-color: white;
-        box-sizing: border-box;
-        width: 100%;
+    &.filter {
+        & a.panel {
+            text-transform: uppercase;
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        & label {
+            font-size: .75rem;
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
     }
+
+    & a.panel {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        display: flex;
+    }
+
     & textarea {
         width: 100%;
         font-family: "ProximaNova";
@@ -108,7 +118,25 @@ a.button {
         }
     }
 }
+input[type="checkbox"] {
 
+}
+
+
+input[type="search"]{
+    font-family: "ProximaNova";
+    color: var(--main);
+    font-size: 1rem;
+    font-style: italic;
+    border: 1px solid var(--form_border);
+    padding: 13px 15px 15px 40px;
+    border-radius: 2px;
+    background-color: white;
+    box-sizing: border-box;
+    background: url('img/search.svg') 15px center no-repeat white;
+    background-size: 15px;
+    width: 100%;
+}
 
 ::placeholder {
     color: var(--placeholder);

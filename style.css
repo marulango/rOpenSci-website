@@ -614,8 +614,12 @@ p {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: #3d98ff
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 a.external {
@@ -642,18 +646,58 @@ nav ul li a {
   text-decoration: none;
 }
 
-label {
+.label {
     text-transform: uppercase;
-    font-size: .75rem;
-    font-weight: 600
+    font-size: .68rem;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 0 6px;
+    line-height: 1.2rem;
+    float: left
 
 }
 
-label .github {
+.label.icon-github {
+  font-size: 1.2rem;
+  margin-left: 5px;
+  padding: 0;
 }
 
-label .github .available {
-  background-color: ;
+.label.nocran {
+  background-color: #dfe3eb;
+}
+
+.label.bioc {
+  background-color: #3d98ff;
+}
+
+.earlydev {
+    padding: 2px 10px;
+    line-height: 1rem;
+    border-radius: 2px;
+    display: inherit;
+    font-size: .60rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #fff8a4;
+    color: #d29f3d;
+}
+
+a[href^="https://cran"] span {
+    background-color: #63cf3a;
+}
+
+a[href^="https://git"] span {
+    color: #63cf3a;
+}
+
+td:last-child { 
+    padding: 15px 5px
+}
+
+td:last-child a {
+  text-decoration: none;
+  color: white;
 }
 
 /* ----------------------------------------------------------- Icon Font ------- */
@@ -879,17 +923,28 @@ form {
     width: 100%
 }
 
-form input {
-  font-family: "ProximaNova";
-  color: #7b869d;
-  font-size: 1rem;
-  font-style: italic;
-  border: 1px solid #e8edf7;
-  padding: 13px 15px 15px 40px;
-  border-radius: 2px;
-  background-color: white;
-  box-sizing: border-box;
-  width: 100%;
+form.filter {
+}
+
+form.filter a.panel {
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+form.filter label {
+  font-size: .75rem;
+}
+
+form.filter label:not(:last-child) {
+  margin-right: 30px;
+}
+
+form a.panel {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
 }
 
 form textarea {
@@ -994,6 +1049,25 @@ a.button.outline.blue {
   color: #3d98ff;
 }
 
+input[type="checkbox"] {
+
+}
+
+input[type="search"]{
+    font-family: "ProximaNova";
+    color: #7b869d;
+    font-size: 1rem;
+    font-style: italic;
+    border: 1px solid #e8edf7;
+    padding: 13px 15px 15px 40px;
+    border-radius: 2px;
+    background-color: white;
+    box-sizing: border-box;
+    background: url('img/search.svg') 15px center no-repeat white;
+    background-size: 15px;
+    width: 100%;
+}
+
 ::placeholder {
     color: #adb5c6;
 }
@@ -1052,6 +1126,51 @@ table tbody tr:last-of-type {
 
 table tbody tr td {
   padding: 15px;
+}
+
+/***************************************************************************************** DATA TABLES *****/
+
+.dataTables_paginate {
+    padding: 0 15px 15px 15px;
+    margin: 20px 0 60px 0;
+    display: flex;
+    border-bottom: 1px solid #edf1f8;
+    justify-content: center;
+    cursor: pointer
+}
+
+.dataTables_paginate span {
+  cursor: pointer;
+}
+
+.dataTables_paginate span a {
+  padding: 7px 10px 5px 9px;
+  color: #a1a8b7;
+  text-decoration: none;
+}
+
+.dataTables_paginate span a:hover {
+  color: #3d98ff;
+}
+
+.paginate_button {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 600;
+    padding: 3px 60px
+
+}
+
+.paginate_button.disabled {
+  color: #a1a8b7;
+  text-decoration: none;
+}
+
+.paginate_button.current {
+  border: 1px solid #3d98ff;
+  color: #3d98ff;
+  border-radius: 20px;
+  font-weight: 700;
 }
 
 /*  --------------------------------------------------  Media Queries Declaration */

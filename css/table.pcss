@@ -35,3 +35,42 @@ table {
         }
     }
 }
+
+/***************************************************************************************** DATA TABLES *****/
+
+.dataTables_paginate {
+    padding: 0 15px 15px 15px;
+    margin: 20px 0 60px 0;
+    display: flex;
+    border-bottom: 1px solid var(--table_divider);
+    justify-content: center;
+    cursor: pointer;
+    & span {
+        cursor: pointer;
+        & a {
+            padding: 7px 10px 5px 9px;
+            color: var(--text_medGray);
+            text-decoration: none;
+            &:hover {
+                color: var(--main_link);
+            }
+        }
+    }
+}
+.paginate_button {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 600;
+    padding: 3px 60px;
+    &.disabled {
+        color: var(--text_medGray);
+        text-decoration: none;
+    }
+    &.current {
+        border: 1px solid var(--main_link);
+        color: var(--main_link);
+        border-radius: 20px;
+        font-weight: 700;
+    }
+
+}
