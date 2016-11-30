@@ -1,0 +1,41 @@
+/*  Code stuff */
+
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+
+pre {
+    font-family: 'Space Mono';
+    white-space: normal;
+    color: var(--code_main);
+    font-size: .87rem;
+    margin-bottom: 20px;
+    background-color: var(--code_container);
+    padding: 15px;
+    border-radius: 3px;
+    & .p {
+        color: var(--main);
+    }
+    & .keyword, & .hljs-keyword {
+        font-weight: 700;
+        color: var(--code_keyword);
+    }
+    & .comment, & .hljs-comment {
+        font-style: italic;
+        color: var(--code_comment);
+    }
+    & .string, & .hljs-string {
+        color: var(--main_link);
+    }
+    & .variable, & .number, & .hljs-variable, & .hljs-number {
+        color: var(--code_var);
+        font-weight: 700;
+    }
+}
+
+p {
+    & code {
+        background-color: var(--code_container);
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: .87rem;
+    }
+}

@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>rOpenSci</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- Fonts.com imports -->
 </head>
 <body>
     <div id="header">
@@ -26,63 +25,74 @@
         </div><!-- /container -->
     </div><!-- /Header -->
 
-        <article>
+    <article class="usecase">
         <div class="container top-20">
-            <div class="row">
-                <div class="col-2 col-offset-2 top-5 subnav">
-                        <ul>
-                            <li>
-                                <a href="#">Localization<i>s</i></a>
-                                <ul class="subitem">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">Portuguese</a></li>
-                                    <li><a href="#">Spanish</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#tags">Tags</a></li>
-                        </ul>
-                </div> <!-- /navigation sidebar -->
+            <div class="row centered">
 
-                <div class="col-5 col-offset-1 bottom-20 maintext">
-                    <div class="excerpt">
-                        <small class="meta">Jun 20, 2015</small>
-                        <h3>ROTL paper published</h3>
-                        <p class="authors">
-                            <a alt="co-author" href="#" target="_blank">Francois Michonneau</a>, <a alt="co-author" href="#" target="_blank">Joseph Brown</a>, <a alt="co-author" href="#" target="_blank">David Winter</a>
-                        </p><!-- /authors -->
-                        <div class="labels">
-                            <a href=""><span class="label">R</span></a><a href=""><span class="label">ROTL</span></a><a href=""><span class="label">open-tree</span></a><a href=""><span class="label">publication</span></a>
-                        </div><!-- /labels -->
-                        <p>We are excited to announce a paper describing rotl, our package for the Open Tree of Life data, has been published. The full citation is: Michonneau, F., Brown, J. W. and Winter, D. J. (2016), rotl: an R package to interact with the Open Tree of Life data. Methods Ecol Evol. doi: https://doi.org/10.1111/2041-210X.12593</p>
-                        <p>The paper, which is freely available, describes the package and the data it wraps in detail. Rather than rehash the information here</p>
-                        <a href="#">Continue Reading</a>
-                    </div><!-- /excerpt -->
+                <div class="col-7 bottom-20 maintext">
+                    <small class="label">rbison</small>
+                    <h2>Macroecology - testing the species-abundance distribution</h2>
 
-                    <div class="excerpt">
-                        <small class="meta">Jun 20, 2015</small>
-                        <h3>ROTL paper published</h3>
-                        <p class="authors"><a alt="co-author" href="#" target="_blank">Francois Michonneau</a>, <a alt="co-author" href="#" target="_blank">Joseph Brown</a>, <a alt="co-author" href="#" target="_blank">David Winter</a></p>
-                        <div class="labels">
-                            <a href=""><span class="label">R</span></a><a href=""><span class="label">ROTL</span></a><a href=""><span class="label">open-tree</span></a><a href=""><span class="label">publication</span></a>
-                        </div><!-- /labels -->
-                        <p>We are excited to announce a paper describing rotl, our package for the Open Tree of Life data, has been published. The full citation is: Michonneau, F., Brown, J. W. and Winter, D. J. (2016), rotl: an R package to interact with the Open Tree of Life data. Methods Ecol Evol. doi: https://doi.org/10.1111/2041-210X.12593</p>
-                        <p>The paper, which is freely available, describes the package and the data it wraps in detail. Rather than rehash the information here</p>
-                        <a href="#">Continue Reading</a>
-                    </div><!-- /excerpt -->
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <p>Keep in mind that BISON data is at least in part within GBIF, which can be accessed from R using our rgbif package. However, BISON provides a slightly different interface to their data than does GBIF, and if you are just interested in US data, then BISON may be easier to use.</p>
 
-                    <div class="excerpt">
-                        <small class="meta">Jun 20, 2015</small>
-                        <h3>ROTL paper published</h3>
-                        <p class="authors"><a alt="co-author" href="#" target="_blank">Francois Michonneau</a>, <a alt="co-author" href="#" target="_blank">Joseph Brown</a>, <a alt="co-author" href="#" target="_blank">David Winter</a></p>
-                        <div class="labels">
-                            <a href=""><span class="label">R</span></a><a href=""><span class="label">ROTL</span></a><a href=""><span class="label">open-tree</span></a><a href=""><span class="label">publication</span></a>
-                        </div><!-- /labels -->
-                        <p>We are excited to announce a paper describing rotl, our package for the Open Tree of Life data, has been published. The full citation is: Michonneau, F., Brown, J. W. and Winter, D. J. (2016), rotl: an R package to interact with the Open Tree of Life data. Methods Ecol Evol. doi: https://doi.org/10.1111/2041-210X.12593</p>
-                        <p>The paper, which is freely available, describes the package and the data it wraps in detail. Rather than rehash the information here</p>
-                        <a href="#">Continue Reading</a>
-                    </div><!-- /excerpt -->
-                </div><!-- /maintext -->
+                            <p>In addition, this example can be done using GBIF data via <code>rgbif</code>.</p>
 
+                            <p>In this example, we do some preliminary work in exploring species-abundance distribution.</p>
+
+                            <p>Make sure to update to the latest version of <code>rbison</code></p>
+
+                            <h3>Load libraries</h3>
+
+                            <pre><code class=" hljs r">
+                                <span class="hljs-keyword">library</span>(<span class="hljs-string">"rbison"</span>)
+                                <span class="hljs-keyword">library</span>(<span class="hljs-string">"ggplot2"</span>)
+                                <span class="hljs-keyword">library</span>(<span class="hljs-string">"plyr"</span>)
+                            </code></pre>
+
+                            <h3>Get BISON data using the rOpenSci package rbison.</h3>
+
+                            <p>We'll not restrain our search to any particular taxonomic group, although you will likely do that in your own research. </p>
+
+                            <pre><code class=" hljs bash">
+                                mynames &lt;- c(<span class="hljs-string">"Helianthus annuus"</span>, <span class="hljs-string">"Pinus contorta"</span>, <span class="hljs-string">"Poa annua"</span>, <span class="hljs-string">"Madia sativa"</span>,<span class="hljs-string">"Arctostaphylos glauca"</span>, <span class="hljs-string">"Heteromeles arbutifolia"</span>, <span class="hljs-string">"Symphoricarpos albus"</span>,<span class="hljs-string">"Ribes viburnifolium"</span>, <span class="hljs-string">"Diplacus aurantiacus"</span>, <span class="hljs-string">"Salvia leucophylla"</span>, <span class="hljs-string">"Encelia californica"</span>,<span class="hljs-string">"Ribes indecorum"</span>, <span class="hljs-string">"Ribes malvaceum"</span>, <span class="hljs-string">"Cercocarpus betuloides"</span>, <span class="hljs-string">"Penstemon spectabilis"</span>)
+                            </code></pre>
+
+                            <h3>Get data</h3>
+
+                            <p>Define a function to get data needed, here just the summary data, then pull out just the <em>total</em> column and make a <code>data.frame</code> along with the input taxon name</p>
+
+                            <pre><code class=" hljs php">
+                                getdata &lt;- <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span> {</span>
+                                tmp &lt;- bison(species = x, what = <span class="hljs-string">"summary"</span>)<span class="hljs-variable">$summary</span>
+                                data.frame(x, abd = tmp<span class="hljs-variable">$total</span>)}
+                            </code></pre>
+
+                            <h3>Get the data by passing each name to the <code>getdata</code> function</h3>
+
+                            <pre><code class=" hljs cs">
+                                <span class="hljs-keyword">out</span> &lt;- ldply(mynames, getdata)
+                            </code></pre>
+
+                            <h3>Plot</h3>
+
+                            <p>Plot species-abundance distributions using the <code>radfit</code> function in vegan</p>
+
+                            <pre><code class=" hljs bash">library(vegan)
+                                plot(radfit(out<span class="hljs-variable">$abd</span>))
+                            </code></pre>
+
+                            <img src="img/usecases-images/rbison.png">
+
+                            <h3>Further reading</h3>
+
+                            <p>Read more about plotting abundance distributions <a href="http://cran.r-project.org/web/packages/vegan/vignettes/diversity-vegan.pdf" target="_Blank">here</a>. </p>
+
+                        </div>
+                    </div>
+
+                </div><!-- /main text container -->
             </div>
         </div>
     </article>
@@ -169,12 +179,6 @@
             </div>
         </div>
     </div><!-- /footer -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.waypoints.js"></script>
-    <script type="text/javascript" src="js/sticky.min.js"></script>
-    <script type="text/javascript" src="js/filterinit.js"></script>
-
 
 </body>
 </html>

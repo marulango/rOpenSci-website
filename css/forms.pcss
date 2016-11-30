@@ -2,6 +2,29 @@
 
 form {
     width: 100%;
+    & input {
+        font-family: "ProximaNova";
+        color: var(--main);
+        font-size: 1rem;
+        font-style: italic;
+        border: 1px solid var(--form_border);
+        padding: 13px 15px 15px 40px;
+        border-radius: 2px;
+        background-color: white;
+        box-sizing: border-box;
+        position: relative;
+        &[type='email'] {
+            background: url('img/email.svg') 15px center no-repeat white;
+            background-size: 15px;
+        }
+        &[name^="name"]{
+            background: url('img/id.svg') 15px center no-repeat white;
+            background-size: 15px;
+        }
+        &[type='radio'] {
+            margin: 0 15px 0 0;
+        }
+    }
 
     &.filter {
         & a.panel {
@@ -13,7 +36,7 @@ form {
         & label {
             font-size: .75rem;
             &:not(:last-child) {
-                margin-right: 30px;
+                margin-right: 35px;
             }
         }
     }
@@ -31,11 +54,13 @@ form {
         color: var(--main);
         font-size: 1rem;
         padding: 15px 15px 15px 40px;
-        min-height: 10vh;
+        min-height: 30vh;
         box-sizing: border-box;
         border-radius: 2px;
         border: 1px solid var(--form_border);
         resize: none;
+        background: url('img/message.svg') 15px 18px no-repeat white;
+        background-size: 15px;
     }
     & button {
         font-family: "ProximaNova";
@@ -55,6 +80,22 @@ form {
     }
 
     &.newsletter {
+        & button {
+            font-family: "ProximaNova";
+            border-radius: 2px;
+            font-size: .87rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: var(--main_link);
+            border: 0 none;
+            color: white;
+            padding: 15px 20px;
+            position: relative;
+            margin-top: -45px;
+            float: right;
+        }
+    }
+    &.newsletter, &.tutorial {
         & input {
             font-family: "ProximaNova";
             color: var(--main);
@@ -71,20 +112,6 @@ form {
             background-size: 15px;
         }
 
-        & button {
-            font-family: "ProximaNova";
-            border-radius: 2px;
-            font-size: .87rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            background-color: var(--main_link);
-            border: 0 none;
-            color: white;
-            padding: 15px 20px;
-            position: relative;
-            margin-top: -45px;
-            float: right;
-        }
     }
 }
 
@@ -100,14 +127,14 @@ a.button {
         background-color: var(--main_button);
         color: white;
     }
-    &.secondary{
+    &.alt {
         padding: 15px 30px;
         background-color: var(--main_link);
         color: white;
     }
     &.outline {
         border: 1px solid;
-        padding: 12px 20px;
+        padding: 10px 25px 8px;
         &.green {
             color: var(--main_button);
             border-color: var(--main_button);
@@ -118,8 +145,19 @@ a.button {
         }
     }
 }
-input[type="checkbox"] {
 
+.apply {
+    border-radius: 2px;
+    border: 1px solid var(--main_button);
+    color: var(--main_button);
+    float: right;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .85rem;
+    &:after {
+        content: 'Apply';
+    }
 }
 
 

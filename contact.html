@@ -26,55 +26,59 @@
         </div><!-- /container -->
     </div><!-- /Header -->
 
-    <section class="donateonline">
+    <section>
         <div class="container">
             <div class="row center">
-                <div class="col-8 top-20">
-                    <h2>Make your Donation</h2>
+                <div class="col-10 top-20">
+                    <h2>We'd love to hear from you</h2>
                 </div>
-            </div>
-            <div class="row center">
-                <div class="col-3 top-4">
-                    <img src="img/donate.svg" />
-                </div>
-            </div>
-            <div class="row center">
                 <div class="col-8 top-4">
-                    Under a <a>fiscal sponsorship agreement</a> with the <a>NumFocus foundation</a>, a 501(c)3 nonprofit, we are now able to accept donations from individuals, institutions, and corporations to support our activities. Contributions from US based individuals and organizations are tax deductible. If you would like to support our activities, we are now able to accept contributions in a variety of forms including <a>FlipCause</a> and <a>BitCoin</a>.
+                    <p>Please don't hestitate to ask us any R, scientific data, API or packaging related questions.</p>
+                    <p>If this is a bug related to a package, please file an issue on the appropriate <a href="https://github.com/ropensci/" target="_blank">GitHub repo.</a></p>
+                </div>
+            </div>
+
+            <form class="contact">
+                <div class="row center">
+                    <div class="col-6 top-12">
+                    <textarea placeholder="Your message" required></textarea>
+                    </div>
+                </div>
+                <div class="row center">
+                    <div class="col-3 top-2">
+                        <input type="text" name="name" placeholder="Your name" required />
+                    </div>
+                    <div class="col-3 top-2">
+                        <input type="email" name="email" placeholder="email@domain.net" required/>
+                    </div>
+                </div>
+
+                <div class="row center">
+                    <div class="col-6 top-4 bottom-20 end">
+                        <button class="main">send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section><!-- /contact -->
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="row center">
+                <div class="col-4 top-9">
+                    <form class="newsletter">
+                        <input type="email" name="email" placeholder="email@domain.net" />
+                        <button class="sumbit" name="submit">Subscribe</button>
+                    </form>
                 </div>
             </div>
             <div class="row center">
-                <div class="col-2 top-6 bottom-20">
-                    <a class="button main">Donate online now</a>
+                <div class="col-6 top-4 bottom-9">
+                    <p>Stay up to date on our projects and events by subscribing to our mailing list</p>
                 </div>
             </div>
         </div>
-    </section><!-- /donateonline -->
-
-    <section class="checks">
-        <div class="container">
-            <div class="row">
-                <div class="col-1 col-offset-2 top-12">
-                    <img src="img/check.svg" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-offset-2 top-4">
-                    <h4>We also take checks!</h4>
-                    <p>Checks can also be made out to NumFOCUS, just make sure to <strong>add rOpenSci in the memo line</strong></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-offset-2 top-4 bottom-12">
-                    <p><strong>NumFOCUS</strong></p>
-                    <p> P.O. Box 90596 <br/>
-                        Austin, TX 78709 <br/>
-                        USA
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section><!-- /checks -->
+    </section><!-- /newsletter -->
 
         <div id="footer">
         <div class="container">

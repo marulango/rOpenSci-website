@@ -11,6 +11,8 @@
   "author": "Marcela Lango",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "postcss-animation": "0.0.11",
     "postcss-at-rules-variables": "0.0.25",
     "postcss-calc": "^5.3.1",
     "postcss-conditionals": "^2.0.2",

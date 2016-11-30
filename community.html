@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>rOpenSci</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- Fonts.com imports -->
 </head>
 <body>
     <div id="header">
@@ -26,69 +25,79 @@
         </div><!-- /container -->
     </div><!-- /Header -->
 
-    <section class="careers">
+    <section>
         <div class="container">
             <div class="row center">
                 <div class="col-8 top-20">
-                    <h2>Careers at rOpenSci</h2>
+                    <h2>We’re a community driven effort</h2>
                 </div>
-                <div class="col-8 top-4">
-                    <p>Our team is made up of highly motivated and independent scientists with a passion for open data reproducible research. We are constantly striving to improve the research software landscape and support a thriving and welcoming community.  Join us in changing science for the better. Various job postings will be open soon.</p>
-                </div>
-            </div><!-- /row -->
-            <div class="row centered">
-                <div class="col-8 top-20">
-                    <h5 class="thead">Open Positions</h5>
-                    <div class="position top-4">
-                        <div class="title">
-                            <h5>Community Manager</h5>
-                            <a class="apply"></a>
-                        </div>
-                        <div class="description">
-                            <small class="meta">Berkeley, Part Time</small>
-                            <p>A mascot is any person, animal, or object thought to bring luck, or anything used to represent a group with a common public identity, such as a school, professional sports team, society, military unit, or brand name. Mascots are also used as fictional, representative spokespeople for consumer products, such as the rabbit used in advertising and marketing for the General Mills brand of breakfast cereal, Trix.</p>
-                        </div><!-- /description -->
-                        <div class="detailed top-4">
-                                  <h6>What We're Looking For:</h6>
-                                  <ul>
-                                      <li>You need to love what you do, have opinions, and get excited about software.</li>
-                                      <li>You're up-to-date with the latest and greatest Android patterns and best practices.</li>
-                                      <li>Solid understanding of object oriented programming and the Android SDKs.</li>
-                                      <li>You've created at least one app that's in use by people and has been iterated on.</li>
-                                      <li>Experience outside of development and understanding of how real people use technology.</li>
-                                      <li>You have development experience outside of the Android ecosystem.</li>
-                                  </ul>
-                                  <h6>Main Job Duties:</h6>
-                                  <ul>
-                                      <li>Ensure the performance, quality and responsiveness of applications.</li>
-                                      <li>Collaborate with a team to define, design, and ship new features.</li>
-                                      <li>Identify and correct bottlenecks and fix bugs.</li>
-                                      <li>Help maintain code quality, organization, and automation.</li>
-                                  </ul>
-                                  <h6>Required Languages and Technologies:</h6>
-                                  <ul>
-                                      <li>Kotlin</li>
-                                      <li>Java</li>
-                                      <li>Ruby</li>
-                                      <li>Elixir</li>
-                                      <li>Android</li>
-                                      <li>Ruby on Rails</li>
-                                      <li>Git</li>
-                                      <li>Linux</li>
-                                      <li>Ansible</li>
-                                  </ul>
-                        </div><!-- /detailed -->
-                        <a class="expand more">Read More</a>
-                    </div><!-- /position -->
-                </div>
-            </div><!-- /row centered -->
-            <div class="row center">
-                <div class="col-8 top-20 bottom-20">
-                    <p>Don't see what you're looking for? Reach out to <a>onejobplz@rOpenSci.org</a></p>
+                <div class="col-8 top-4 bottom-20">
+                    <p>Looking for a place to get started? We suggest a post to our <a href="#">discussion forum</a></p>
+                    <p class="top-4">For code submissions you can check our <a href="#" target="_blank">onboarding repository</a> for guidelines. Have any killer ideas? Feel free to add it to our <a href="#" target="_blank">wishlist</a>, where you can request help, collaborators, or simply suggest an idea for someone else to pick up. If you would like to learn how to develop a package to solve a problem with our help, <a href="/contact.html">drop us a note</a>.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="commcalls slideshow">
+        <div class="container">
+            <div class="row ontop">
+                <div class="col-4 col-offset-2 top-20 bottom-20">
+                    <h3 class="top-10">Community Calls</h3>
+                    <p class="top-4">We hold community calls open to everyone once every six weeks. Join us to hear about new projects, Q&As with well known developers, and to learn more about rOpenSci developments.</p>
+                    <a class="button alt top-4 bottom-10" target="_blank" href="#">Commcalls Archive</a>
+                </div>
+            </div>
+            <ul>
+                <li><span>01</span><div><h3>Hadley Wickham</h3></div></li>
+                <li><span>02</span><div><h3>Karthik Ram</h3></div></li>
+                <li><span>03</span><div><h3>Scott Chamberlain</h3></div></li>
+                <li><span>04</span><div><h3>Jeroen Ooms</h3></div></li>
+                <li><span>05</span><div><h3>Moar Samples yay</h3></div></li>
+                <li><span>06</span><div><h3>Name Here</h3></div></li>
+            </ul>
         </div><!-- /container -->
-    </section> <!-- /careers -->
+    </section>
+
+    <section class="upcoming" id="events">
+        <div class="container">
+            <div class="row center">
+                <div class="col-8 top-20">
+                    <h2>Upcoming events</h2>
+                </div>
+            </div><!-- /row -->
+            <div class="row center">
+                <div class="col-10 top-12">
+
+                    <div id="authorize-div" style="display: none">
+                        <span>Authorize access to Google Calendar API</span>
+                        <!--Button for the user to click to initiate auth sequence -->
+                        <button id="authorize-button" onclick="handleAuthClick(event)">Authorize</button>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventlist"> 
+                        <!-- Auto appends calendar events from calinit.js --> 
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div class="col-4 top-5 bottom-13">
+                    <a href="CALENDARLINK" target="_blank" class="button outline green">View full calendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /calendar            ******** IMPORTANT: this section requires calinit.js ********* --> 
 
     <section class="newsletter">
         <div class="container">
@@ -106,7 +115,8 @@
                 </div>
             </div>
         </div>
-    </section><!-- /newsletter -->
+    </section>
+
 
         <div id="footer">
         <div class="container">
@@ -160,10 +170,9 @@
         </div>
     </div><!-- /footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/careers.js"></script>
-
-
+    <!-- Loads calendar authorization and funcionality -->
+    <script type="text/javascript" src="js/calinit.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 
 </body>
 </html>

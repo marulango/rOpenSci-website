@@ -11,9 +11,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img src="img/logo-header.png" /><!-- Static Placeholder -->
+                    <a href="/index.html"><img src="img/icon_lettering_white.svg" /></a>
                 </div>
-                <nav class="col-6 col-offset-4">
+                <nav class="col-6 col-offset-4 top-8">
                     <ul class="row between">
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="packages.html">Packages</a></li>
@@ -25,6 +25,210 @@
             </div><!-- /row -->
         </div><!-- /container -->
     </div><!-- /Header -->
+
+    <article>
+        <div class="container">
+            <div class="row centered">
+                <div class="col-6 top-20 bottom-20">
+                    <small class="meta">Jun 12, 2016</small>
+                    <h2>ROTL Paper published</h2>
+                    <p class="authors">
+                        <a alt="co-author" href="#" target="_blank">Francois Michonneau</a>, <a alt="co-author" href="#" target="_blank">Joseph Brown</a>, <a alt="co-author" href="#" target="_blank">David Winter</a>
+                    </p>
+                    <div class="labels">
+                        <a href=""><span class="label">R</span></a><a href=""><span class="label">ROTL</span></a><a href=""><span class="label">open-tree</span></a><a href=""><span class="label">publication</span></a>
+                    </div><!-- /labels -->
+                </div>
+            </div>
+            <div class="row centered">
+                <div class="col-6 bottom-20">
+
+                    <p>We are excited to announce a paper describing <code>rotl</code>, our package for the
+                        <a href="http://www.opentreeoflife.org/">Open Tree of Life</a> data, has been
+                        <a href="https://doi.org/10.1111/2041-210X.12593">published</a>. The full
+                        citation is:
+                    </p>
+
+                    <p>Michonneau, F., Brown, J. W. and Winter, D. J. (2016), rotl: an R
+                        package to interact with the Open Tree of Life data. <em>Methods Ecol
+                        Evol.</em> doi: <a href="https://doi.org/10.1111/2041-210X.12593">https://doi.org/10.1111/2041-210X.12593</a>
+                    </p>
+
+                    <p>The paper, which is freely available, describes the package and the data
+                        it wraps in detail. Rather than rehash the information here, we will use
+                        this post to briefly introduce the goals of the package and thank some
+                        of the people that helped it come to be.
+                    </p>
+
+                    <h3 id="what-data-does-open-tree-have-and-how-can-rotl-help-you-get-it?">
+                        What data does Open Tree have and how can <code>rotl</code> help you get it?
+                    </h3>
+
+                    <p>The <a href="http://www.opentreeoflife.org/">Open Tree of Life</a> combines
+                        knowledge from thousands of scientific studies to produce a single
+                        source of information about the relationships among all species on
+                        earth. In addition to storing the trees and taxonomies that go into this
+                        project, the Open Tree provides a "synthesis tree" that represents this
+                        combined knowledge. The Open Tree data can be accessed via the web page
+                        linked above, and through an API.<code>rotl</code> takes advantage of this API to
+                        give R users the ability to search for phylogenetic information and
+                        import the results into their R sessions. The imported data can then be
+                        used with the growing ecosystem of packages for phylogenetic and
+                        comparative biology in R.
+                    </p>
+
+                    <h3 id="a-small-example">A small example</h3>
+
+                    <p>Using <code>rotl</code> to get a tree for a set of names is usually a two step
+                        process. You need to start by matching the set of names you have to
+                        records in the Open Tree database, and obtain unique IDs for each one.
+                        The function <code>tnrs_match_names</code> handles this task:
+                    </p>
+                    <div class="highlight">
+                        <pre><code class="language-text hljs r" data-lang="text"><span class="hljs-keyword">library</span>(rotl)
+                            apes &lt;- c(<span class="hljs-string">"Pongo"</span>, <span class="hljs-string">"Pan"</span>, <span class="hljs-string">"Gorilla"</span>, <span class="hljs-string">"Hoolock"</span>, <span class="hljs-string">"Homo"</span>)
+                            resolved_names &lt;- tnrs_match_names(apes)
+                            resolved_names
+
+                            <span class="hljs-comment">##   search_string unique_name approximate_match ott_id is_synonym flags</span>
+                            <span class="hljs-comment">## 1         pongo       Pongo             FALSE 417949      FALSE</span>
+                            <span class="hljs-comment">## 2           pan         Pan             FALSE 417957      FALSE</span>
+                            <span class="hljs-comment">## 3       gorilla     Gorilla             FALSE 417969      FALSE</span>
+                            <span class="hljs-comment">## 4       hoolock     Hoolock             FALSE 712902      FALSE</span>
+                            <span class="hljs-comment">## 5          homo        Homo             FALSE 770309      FALSE</span>
+                            <span class="hljs-comment">##   number_matches</span>
+                            <span class="hljs-comment">## 1              1</span>
+                            <span class="hljs-comment">## 2              1</span>
+                            <span class="hljs-comment">## 3              1</span>
+                            <span class="hljs-comment">## 4              1</span>
+                            <span class="hljs-comment">## 5              1</span>
+                        </code></pre>
+                    </div>
+                    <p>Once you have a good set of unique IDs, you will want to fetch a tree.
+                        You can use <code>ott_id</code> to extract just the IDs from the table returned by
+                        <code>tnrs_match_names</code> and pass those to <code>tol_induced_subtree</code> to fetch a
+                        tree with theses species in the tips
+                    </p>
+                    <div class="highlight">
+                        <pre><code class="language-text hljs perl" data-lang="text">
+                            <span class="hljs-keyword">tr</span> &lt;- tol_induced_subtree(ott_ids=ott_id(resolved_names))
+                            plot(<span class="hljs-keyword">tr</span>)
+                        </code></pre>
+                        <p>
+                            <img src="img/blog-images/rotl_pub/ape_tree.png" alt="img">
+                        </p>
+
+                        <p>The tree is an object of the <code>ape</code> class <code>phylo</code>, which is used by most
+                            other phylogeny packages in R. There are two vignettes describing how
+                            the fetched trees can be <a href="https://cran.rstudio.com/web/packages/rotl/vignettes/data_mashups.html">paired with other
+                            data</a>
+                            and used to <a href="https://cran.rstudio.com/web/packages/rotl/vignettes/meta-analysis.html">reproduce a comparative
+                            analysis</a>.
+                            <a href="https://cran.rstudio.com/web/packages/rotl/vignettes/how-to-use-rotl.html">Another
+                                vignette</a>
+                                provides and introduction to the package and includes an FAQ.
+                        </p>
+
+                        <h3 id="thanks">Thanks</h3>
+                        <p>We'd like to thank the Open Tree project for providing such an amazing
+                                resource, and  for producing a powerful and well-documented API. <code>rotl</code> was
+                                initially developed as part of the <a href="https://ropensci.org/blog/2014/08/15/open-tree-of-life-hackathon/">Open Tree's hackathon in Ann Arbor in 2014</a>.
+                                We'd like to thank the Open Tree project for inviting us to the meeting
+                                and all participants of that meeting for discussions and their feedback
+                                on <code>rotl</code>. The package was reviewed as part of the ROpenSci onboarding
+                                process, and we'd like to thank <a href="http://scottchamberlain.info/">Scott
+                                Chamberlain</a> for the time and expertise
+                                that went into this review and improved the package.
+                        </p>
+
+                    </div>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </article>
+
+    <section class="disqus">
+        <div class="container">
+            <div class="row center">
+                <div class="col-9">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                         */
+                        /*
+                        var disqus_config = function () {
+                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                            var d = document, s = d.createElement('script');
+                            
+                            s.src = '//EXAMPLE.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+                            
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-1 top-8">
+                    <img src="img/icon_short_white.svg" />
+                </div>
+                <div class="col-1 col-offset-6 top-8 between">
+                    <a href=""><div class="icon icon-github"></div></a>
+                    <a href=""><div class="icon icon-twitter"></div></a>
+                    <a href=""><div class="icon icon-vimeo"></div></a>
+                </div>
+                <div class="col-1 col-offset-7 top-8 bottom-8">
+                    <h5 class="bottom-4">About</h5>
+                    <ul>
+                        <li><a href="about.html">Team</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-1 top-8 bottom-8">
+                    <h5 class="bottom-4">Info</h5>
+                    <ul>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="">Discuss</a></li>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="">Related</a></li>
+                    </ul>
+                </div>
+                <div class="col-1 top-8 bottom-8">
+                    <h5 class="bottom-4">Work</h5>
+                    <ul>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="use_cases.html">Use Cases</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-2 top-8 bottom-8">
+                    <h5 class="bottom-4">Sponsorship</h5>
+                    <p>rOpenSci is a fiscally sponsored project by <a href="#">NumFocus</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 top-8 bottom-9 divider">
+                    <p class="top-9">Except where otherwise noted, content on this site is licensed under the CC-BY license.</p>
+                </div>
+            </div>
+        </div>
+    </div><!-- /footer -->
 
 </body>
 </html>

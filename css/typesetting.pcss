@@ -87,13 +87,28 @@ h4 {
     font-weight: 600;
 }
 h5 {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 600;
+    & i {
+        color: var(--main_link);
+        font-weight: 500;
+    }
+}
+h6 {
+    font-size: .75rem;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 p {
     font-size: inherit;
-    line-height: 1.4rem;
+    line-height: 1.6rem;
+    & strong {
+        font-weight: 700;
+    }
+    & em {
+        font-weight: italic;
+    }
 }
 a {
     text-decoration: none;
@@ -105,9 +120,18 @@ a {
     &.external {
         display: inline-block;
         text-transform: uppercase;
-        font-size: .87rem;
+        font-size: .75rem;
+        font-weight: 600;
+        text-decoration: underline;
         margin-top: 20px;
     }
+}
+
+blockquote {
+    border-left: 2px solid var(--table_divider);
+    font-style: italic;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
 nav {
@@ -150,6 +174,12 @@ nav {
 
 }
 
+.thead {
+    border-bottom: 1px solid var(--table_divider);
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
 .earlydev {
     padding: 2px 10px;
     line-height: 1rem;
@@ -177,6 +207,11 @@ td:last-child {
         text-decoration: none;
         color: white;
     }
+}
+
+.meta {
+    color: #a8b0c1;
+    font-size: .75rem;
 }
 
 /* ----------------------------------------------------------- Icon Font ------- */
@@ -225,47 +260,62 @@ i {
 }
 
 .icon-email:before {
-    content: "\61";
+  content: "\61";
 }
 .icon-gift:before {
-    content: "\62";
+  content: "\62";
 }
 .icon-heart:before {
-    content: "\63";
+  content: "\63";
 }
 .icon-notebook:before {
-    content: "\64";
+  content: "\64";
 }
 .icon-sign:before {
-    content: "\65";
+  content: "\65";
 }
 .icon-video:before {
-    content: "\66";
+  content: "\66";
 }
 .icon-caret-down:before {
-    content: "\67";
+  content: "\67";
 }
 .icon-caret-left:before {
-    content: "\68";
+  content: "\68";
 }
 .icon-caret-right:before {
-    content: "\69";
+  content: "\69";
 }
 .icon-caret-up:before {
-    content: "\6a";
+  content: "\6a";
 }
 .icon-vimeo:before {
-    content: "\6b";
+  content: "\6b";
 }
 .icon-github:before {
-    content: "\6c";
+  content: "\6c";
 }
 .icon-id:before {
-    content: "\6d";
+  content: "\6d";
 }
 .icon-message:before {
-    content: "\6e";
+  content: "\6e";
 }
 .icon-twitter:before {
-    content: "\6f";
+  content: "\6f";
+}
+.icon-search:before {
+  content: "\70";
+}
+.icon-ropensci-short:before {
+  content: "\71";
+}
+.icon-stackoverflow:before {
+  content: "\72";
+}
+.icon-expand:before {
+  content: "\73";
+}
+.icon-collapse:before {
+  content: "\74";
 }

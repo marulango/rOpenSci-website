@@ -5,8 +5,14 @@
         "postcss-each",
         "postcss-conditionals",
         "postcss-custom-properties",
-        "postcss-calc",
         "postcss-nesting",
-        "postcss-custom-media"
-    ]
+        "postcss-custom-media",
+        "postcss-animation",
+        "postcss-calc",
+        "autoprefixer"
+    ],
+    "autoprefixer": {
+        "browsers": "> 5%"
+    }
+
 }

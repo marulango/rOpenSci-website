@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>rOpenSci</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Fonts.com imports -->
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <a href="/index.html"><img src="img/icon_lettering_white.svg" /></a>
+                </div>
+                <nav class="col-6 col-offset-4 top-8">
+                    <ul class="row between">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="">Discuss</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div><!-- /row -->
+        </div><!-- /container -->
+    </div><!-- /Header -->
+
+    <article>
+        <div class="container top-20">
+            <div class="row centered">
+                <div class="col-2 sidebar top-5">
+                        <ul>
+                            <li><a href="#installation">Installation</a></li>
+                            <li>
+                                <a href="#usage">Using the package <i>s</i></a>
+                                <ul class="subitem">
+                                    <li><a href="#basic-tree-and-metadata-queries">Basic tree and metadata queries</a></li>
+                                    <li><a href="#replicating-results">Replicating Results</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="#citing">Citing</a></li>
+                            <li><a href="#license_bugs">License and bugs</a></li>
+                        </ul>
+                </div> <!-- /navigation sidebar -->
+
+                <div class="col-7 bottom-20 maintext">
+                    <small class="meta">Jun 12, 2015</small>
+                    <h2>Treebase tutorial</h2>
+                    <small class="version">for v0.0-7.1</small>
+
+                    <p>Here are a few introductory examples to illustrate some of the functionality of the package. Thanks in part to new data deposition requirements at journals such as Evolution, Am Nat, and Sys Bio, and data management plan requirements from NSF, I hope the package will become increasingly useful for teaching by replicating results and for meta-analyses that can be automatically updated as the repository grows. Additional information and bug-reports welcome via the <a href="http://ropensci.org/packages/treebase.html#support">treebase page</a>.</p>
+
+                    <section id="installation">
+
+                        <h3 id="installation">Installation</h3>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                install.packages<span class="p">(</span><span class="s"><span class="string">'treebase'</span></span><span class="p">)</span>
+                            </code></pre>
+                        </div>
+
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                <span class="kn">
+                                    <span class='keyword'>library</span>
+                                </span>
+                                <span class="p">(</span>treebase<span class="p">)</span>
+                            </code></pre>
+                        </div>
+
+                    </section><!-- /instalation -->
+
+
+                    <section id="usage">
+
+                        <h3 id="usage">Usage</h3>
+                        <h4 id="basic-tree-and-metadata-queries">Basic tree and metadata queries</h4>
+
+                        <p>Downloading trees by different queries: by author, taxa, &amp; study. More options are described in the help file.</p>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                both <span class="o">&lt;-</span> search_treebase<span class="p">(</span><span class="s"><span class="string">"Ronquist or Hulesenbeck"</span></span><span class="p">,</span> by<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="s"><span class="string">"author"</span></span><span class="p">,</span> <span class="s"><span class="string">"author"</span><span class="p">))</span>
+                                <br/>
+                                dolphins <span class="o">&lt;-</span> search_treebase<span class="p">(</span><span class="s"><span class="string">'"Delphinus"'</span></span><span class="p">,</span> by<span class="o">=</span><span class="s"><span class="string">"taxon"</span></span><span class="p">,</span> max_trees<span class="o">=</span><span class="m"><span class="number">5</span></span>
+                                <span class="p">)</span>
+                                <br/>
+                                studies <span class="o">&lt;-</span> search_treebase<span class="p">(</span><span class="s"><span class="string">"2377"</span></span><span class="p">,</span> by<span class="o">=</span><span class="s"><span class="string">"id.study"</span></span><span class="p">)</span>
+                            </code></pre>
+                        </div>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                Near <span class="o">&lt;-</span> search_treebase<span class="p">(</span><span class="s"><span class="string">"Near"</span></span><span class="p">,</span> <span class="s"><span class="string">"author"</span></span><span class="p">,</span> branch_lengths<span class="o">=</span><span class="kc"><span class="literal">TRUE</span></span><span class="p">,</span> max_trees<span class="o">=</span><span class="m"><span class="number">3</span></span><span class="p">)</span> Near<span class="p">[</span><span class="m"><span class="number">1</span></span><span class="p">]</span>
+                            </code></pre>
+                        </div>
+                        <div class="highlight">
+                            <pre><code class="language-text hljs r" data-lang="text">
+                                [[<span class="number">1</span>]] <br/>
+                                Phylogenetic tree with <span class="number">19</span> tips and <span class="number">6</span> internal nodes.
+                                <br/>
+                                <br/>
+                                Tip labels: 
+                                &nbsp;&nbsp;Etheostoma_barrenense_A, Etheostoma_rafinesquei_B, Etheostoma_atripinne_A, Etheostoma_atripinne_D, Etheostoma_atripinne_P, Etheostoma_orientale_H, <span class='keyword'>...</span>
+
+                                Unrooted; includes branch lengths.
+                            </code></pre>
+                        </div>
+
+                        <p>We can query the metadata record directly. For instance, plot the growth of Treebase submissions by publication date</p>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                all <span class="o">&lt;-</span> download_metadata<span class="p">(</span><span class="string">""</span><span class="p">,</span> by<span class="o">=</span><span class="string">"all"</span><span class="p">)</span>
+                                <br/>
+                                dates <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span><span class="kp">all</span><span class="p">,</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>x<span class="p">)</span> <span class="kp">as.numeric</span><span class="p">(</span>x<span class="o">$</span><span class="kp">date</span>
+                                <span class="p">))</span>
+                                <br/>
+                                <span class="kn"><span class='keyword'>library</span></span><span class="p">(</span>ggplot2<span class="p">)</span>qplot<span class="p">(</span>dates<span class="p">,</span> main<span class="o">=</span><span class="string">"Treebase growth"</span><span class="p">,</span> xlab<span class="o">=</span><span class="string">"Year"</span><span class="p">,</span> binwidth<span class="o">=</span><span class="m"><span class="number">.5</span></span><span class="p">)</span>
+                            </code></pre>
+                        </div>
+                        <p>(The previous query could also take a date range)</p>
+
+                        <p>How do the weekly's do on submissions to Treebase? We construct this in a way that gives us back the indices of the matches, so we can then grab those trees directly. Run the scripts yourself to see if they've changed!</p>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                nature <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span><span class="kp">all</span><span class="p">,</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>x<span class="p">)</span> <span class="kp">length</span><span class="p">(</span><span class="kp">grep</span><span class="p">(</span><span class="string">"Nature"</span><span class="p">,</span> x<span class="o">$</span>publisher<span class="p">))</span><span class="o">&gt;</span><span class="m"><span class="number">0</span></span><span class="p">)</span> science <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span><span class="kp">all</span><span class="p">,</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>x<span class="p">)</span> <span class="kp">length</span><span class="p">(</span><span class="kp">grep</span><span class="p">(</span><span class="string">"^Science$"</span><span class="p">,</span> x<span class="o">$</span>publisher<span class="p">))</span><span class="o">&gt;</span><span class="m"><span class="number">0</span></span><span class="p">)</span> <span class="kp">sum</span><span class="p">(</span>nature<span class="p">)</span>
+                                <br/>
+                                <span class="kp">sum</span><span class="p">(</span>science<span class="p">)</span>
+                            </code></pre>
+                        </div>
+                    
+                        <h4 id="replicating-results">Replicating results</h4>
+
+                        <p>A nice paper by Derryberry et al. appeared in Evolution recently on <a href="http://www.museum.lsu.edu/brumfield/pubs/furnphylogeny2011.pdf">diversification in ovenbirds and woodcreepers, 0.1111/j.1558-5646.2011.01374.x</a>. The article mentions that the tree is on Treebase, so let's see if we can replicate their diversification rate analysis: Let's grab the trees by that author and make sure we have the right one:</p>
+                        
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                search_treebase<span class="p">(<span class="string">"Derryberry"</span><span class="p">,</span> <span class="string">"author"</span><span class="p">)[[</span><span class="m"><span class="number">1</span></span><span class="p">]]</span> <span class="o">-&gt;</span> tree
+                                <br/>
+                                plot<span class="p">(</span>tree<span class="p">)</span>
+                            </code></pre>
+                        </div>
+                        <p><img src="img/tutorial-images/treebase/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+                        <p>They fit a variety of diversification rate models avialable in the <code>laser</code> R package, which they compare using AIC.</p>
+
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                install.packages<span class="p">(</span><span class="string">"laser"</span><span class="p">)</span>
+                            </code></pre>
+                        </div>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                <span class="kn"><span class='keyword'>library</span></span><span class="p">(</span>laser<span class="p">)</span>tt <span class="o">&lt;-</span> branching.times<span class="p">(</span>tree<span class="p">)</span>
+                                <br/>
+                                models <span class="o">&lt;-</span>  <span class="kt">list</span><span class="p">(</span>pb <span class="o">=</span> pureBirth<span class="p">(</span>tt<span class="p">),</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                bdfit <span class="o">=</span> bd<span class="p">(</span>tt<span class="p">),</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                y2r <span class="o">=</span> yule2rate<span class="p">(</span>tt<span class="p">),</span><span class="comment"># yule model with single shift pt</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                ddl <span class="o">=</span> DDL<span class="p">(</span>tt<span class="p">),</span> <span class="comment"># linear, diversity-dependent</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                ddx <span class="o">=</span> DDX<span class="p">(</span>tt<span class="p">),</span> <span class="comment">#exponential diversity-dendent</span></br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                sv <span class="o">=</span> fitSPVAR<span class="p">(</span>tt<span class="p">),</span> <span class="comment"># vary speciation in time</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                ev <span class="o">=</span> fitEXVAR<span class="p">(</span>tt<span class="p">),</span> <span class="comment"># vary extinction in time</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                bv <span class="o">=</span> fitBOTHVAR<span class="p">(</span>tt<span class="p">)</span><span class="comment"># vary both</span>
+                                </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="p">)</span>
+                                </br>
+                                <span class="kp">names</span><span class="p">(</span>models<span class="p">[[</span><span class="m"><span class="number">3</span></span><span class="p">]])[</span><span class="m"><span class="number">5</span></span><span class="p">]</span> <span class="o">&lt;-</span> <span class="string">"aic"</span>
+                                </br>
+                                aics <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span>models<span class="p">,</span> <span class="string">"[["</span><span class="p">,</span> <span class="string">"aic"</span><span class="p">)</span>
+                                <br/>
+                                <span class="comment"># show the winning model</span>
+                                </br>
+                                models<span class="p">[</span><span class="kp">which.min</span><span class="p">(</span>aics<span class="p">)]</span>
+                            </code></pre>
+                        </div>
+                        <div class="highlight">
+                            <pre><code class="language-text hljs bash" data-lang="text">
+                                <span class="variable">$y2r</span>
+                                </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     r1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     r2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     st1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     aic
+                                </br>
+                                <span class="number">229.26699</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="number">18.31627</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">4.07539</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="number">0.01006</span> 
+                                &nbsp;&nbsp;&nbsp;&nbsp;-<span class="number">452.53398</span> 
+                            </code></pre>
+                        </div>
+                        <p>Yup, their result agrees with our analysis. Using the extensive toolset for diversification rates in R, we could now rather easily check if these results hold up in newer methods such as TreePar, etc.</p>
+                    </section><!-- /usage -->
+
+                    <section id="analysis">
+                        <h4 id="meta-analysis">Meta-Analysis</h4>
+
+                        <p>Of course one of the more interesting challenges of having an automated interface is the ability to perform meta-analyses across the set of available phylogenies in treebase. As a simple proof-of-principle, let's check all the phylogenies in treebase to see if they fit a birth-death model or yule model better.</p>
+
+                        <p>We'll create two simple functions to help with this analysis. While these can be provided by the treebase package, I've included them here to illustrate that the real flexibility comes from being able to create custom functions(These are primarily illustrative; I hope users and developers will create their own. In a proper analysis we would want a few additional checks.)</p>
+
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                timetree <span class="o">&lt;-</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>tree<span class="p">){</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;check.na <span class="o">&lt;-</span> <span class="kp"><span class='keyword'>try</span></span><span class="p">(</span><span class="kp">sum</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>tree<span class="o">$</span>edge.length<span class="p">))</span><span class="o">&gt;</span><span class="m"><span class="number">0</span></span><span class="p">)</span><span class="kr">
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class='keyword'>if</span></span><span class="p">(</span>is<span class="p">(</span>check.na<span class="p">,</span> <span class="string">"try-error"</span><span class="p">)</span> <span class="o">|</span> check.na<span class="p">)</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kc"><span class="literal">NULL</span></span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kp"><span class='keyword'>else</span></span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="kp"><span class='keyword'>try</span></span><span class="p">(</span> chronoMPL<span class="p">(</span>multi2di<span class="p">(</span>tree<span class="p">))</span> <span class="p">)</span>
+                                <br/>
+                                <span class="p">}</span>
+                                <br/>
+                                drop_errors <span class="o">&lt;-</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>tr<span class="p">){</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                tt <span class="o">&lt;-</span> tr<span class="p">[</span><span class="o">!</span><span class="kp">sapply</span><span class="p">(</span>tr<span class="p">,</span> <span class="kp">is.null</span><span class="p">)]</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                tt <span class="o">&lt;-</span> tt<span class="p">[</span><span class="o">!</span><span class="kp">sapply</span><span class="p">(</span>tt<span class="p">,</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>x<span class="p">)</span> is<span class="p">(</span>x<span class="p">,</span> <span class="string">"try-error"</span><span class="p">))]</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="kp">print</span><span class="p">(</span><span class="kp">paste</span><span class="p">(</span><span class="string">"dropped"</span><span class="p">,</span> <span class="kp">length</span><span class="p">(</span>tr<span class="p">)</span><span class="o">-</span><span class="kp">length</span><span class="p">(</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                tt<span class="p">),</span> <span class="string">"trees"</span><span class="p">))</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                tt
+                                <br/>
+                                <span class="p">}</span>
+                                <br/>
+                                <span class="kn"><span class='keyword'>require</span></span><span class="p">(</span>laser<span class="p">)</span>
+                                <br/>
+                                pick_branching_model <span class="o">&lt;-</span> <span class="kr"><span class='keyword'>function</span></span><span class="p">(</span>tree<span class="p">){</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                m1 <span class="o">&lt;-</span> <span class="kp"><span class='keyword'>try</span></span><span class="p">(</span>pureBirth<span class="p">(</span>branching.times<span class="p">(</span>tree<span class="p">)))</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                m2 <span class="o">&lt;-</span> <span class="kp"><span class='keyword'>try</span></span><span class="p">(</span>bd<span class="p">(</span>branching.times<span class="p">(</span>tree<span class="p">)))</span>
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="kp">as.logical</span><span class="p">(</span><span class="kp"><span class='keyword'>try</span></span><span class="p">(</span>m2<span class="o">$</span>aic <span class="o">&lt;</span> m1<span class="o">$</span>aic<span class="p">))</span>
+                                <br/>
+                                <span class="p">}</span>
+                            </code></pre>
+                        </div>
+
+                        <p>Return only treebase trees that have branch lengths. This has to download every tree in treebase, so this will take a while. Good thing we don't have to do that by hand.</p>
+                        <div class="highlight">
+                            <pre><code class="language-r hljs " data-lang="r">
+                                all <span class="o">&lt;-</span> search_treebase<span class="p">(</span><span class="string">"Consensus"</span><span class="p">,</span> <span class="string">"type.tree"</span><span class="p">,</span> branch_lengths<span class="o">=</span><span class="kc"><span class="literal">TRUE</span></span><span class="p">)</span>
+                                <br/>
+                                tt <span class="o">&lt;-</span> drop_errors<span class="p">(</span><span class="kp">sapply</span><span class="p">(</span><span class="kp">all</span><span class="p">,</span> timetree<span class="p">))</span>
+                                <br/>
+                                is_yule <span class="o">&lt;-</span> <span class="kp">sapply</span><span class="p">(</span>tt<span class="p">,</span> pick_branching_model<span class="p">)</span>
+                                <br/>
+                                <span class="kp">table</span><span class="p">(</span>is_yule<span class="p">)</span>
+                            </code></pre>
+                        </div>
+                        <p><em>Note: The output is not shown, but do run on your own!</em></p>
+                    </section><!-- /analysis -->
+
+                    <section id="citing">
+                        <h3 id="citing">Citing</h3>
+                        <p>To cite <code>treebase</code> in publications use:</p>
+
+                        <blockquote>
+                            <p>Carl Boettiger and Duncan Temple Lang (2011). treebase: An R package for discovery, access and manipulation of online phylogenies. R package version 0.0-7.1. 
+                            <br/>
+                            <a href="https://github.com/ropensci/treebase">https://github.com/ropensci/treebase</a></p>
+                        </blockquote>
+                    </section><!-- /citing -->
+
+                    <section>
+                        <h3 id="license-and-bugs">License and bugs</h3>
+                        <ul>
+                            <li>License: <a href="http://creativecommons.org/choose/zero/">CC0</a></li>
+                            <li>Report bugs at <a href="https://github.com/ropensci/treebase/issues?state=open">our Github repo for treebase</a></li>
+                        </ul>
+                    </section><!-- /licence and bugs -->
+
+                </div><!-- /main text container -->
+            </div>
+        </div>
+    </article>
+
+    <section class="disqus">
+        <div class="container">
+            <div class="row center">
+                <div class="col-9">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                         */
+                        /*
+                        var disqus_config = function () {
+                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                            var d = document, s = d.createElement('script');
+                            
+                            s.src = '//EXAMPLE.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+                            
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.waypoints.js"></script>
+    <script type="text/javascript" src="js/sticky.min.js"></script>
+    <script type="text/javascript" src="js/sidebarinit.js"></script>
+
+
+</body>
+</html>

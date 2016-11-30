@@ -12,9 +12,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img src="img/logo-header.png" /><!-- Static Placeholder -->
+                    <a href="/index.html"><img src="img/icon_lettering_white.svg" /></a>
                 </div>
-                <nav class="col-6 col-offset-4">
+                <nav class="col-6 col-offset-4 top-8">
                     <ul class="row between">
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="packages.html">Packages</a></li>
@@ -95,13 +95,13 @@
                     <p>Our work is possible thanks to your support</p>
                 </div>
                 <div class="col-10 top-2 bottom-12">
-                    <a class="button secondary">
+                    <a class="button alt">
                         Donate
                     </a>
                 </div>
             </div>
         </div>
-    </section>
+    </section><!-- /donate -->
 
     <section class="docs">
         <div class="container">
@@ -145,30 +145,36 @@
                 </div>
             </div>
             <div class="row center">
-                <div class="col-8 top-4 bottom-4">
+                <div class="col-8 top-4 bottom-6">
                     <h2>We're big on community</h2>
                 </div>
             </div>
             <div class="row center">
-                <div class="col-8 top-4 bottom-4">
+                <div class="col-8 top-4 bottom-20">
                     <p>We welcome you to join us and help improve tools and practices available to researches while receiving greater visibility to your contributions. You can contribute with your packages, resources or post questions so our members will help you along your process.</p>
-                    <a class="button main top-2 bottom-20">Get Started</a>
+                    <a class="button main top-4 bottom-20">Get Started</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="events">
+    <section class="upcoming">
         <div class="container">
             <div class="row center">
-                <div class="col-8 top-12">
-                    <h2>Upcoming Events</h2>
-                    <p>Keep updated on the rOpenSci agenda and join us at our upcoming events</p>
+                <div class="col-8 top-20">
+                    <h2>Upcoming events</h2>
                 </div>
-            </div>
+            </div><!-- /row -->
             <div class="row center">
                 <div class="col-10 top-12">
-                    <table class="bottom-7">
+
+                    <div id="authorize-div" style="display: none">
+                        <span>Authorize access to Google Calendar API</span>
+                        <!--Button for the user to click to initiate auth sequence -->
+                        <button id="authorize-button" onclick="handleAuthClick(event)">Authorize</button>
+                    </div>
+
+                    <table>
                         <thead>
                             <tr>
                                 <th>Event</th>
@@ -177,36 +183,20 @@
                                 <th>Details</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Community Call</td>
-                                <td>Oct 16, 5:00 PM CST</td>
-                                <td><a>http://goo.gl/SAMPLELINK</a></td>
-                                <td><a>View details</a></td>
-                            </tr>
-                            <tr>
-                                <td>Graphical Resources for Infectious Disease Epidemiology in R</td>
-                                <td>Nov 20, 12:00 PM PST</td>
-                                <td><a>Revolution Hall, Portland<a></td>
-                                <td><a>XOXO Fest 2016<a></td>
-                            </tr>
-                            <tr>
-                                <td>Seville Workshop</td>
-                                <td>Feb 15 - Mar 20, 2015</td>
-                                <td>Parque de los Príncipes, Seville, ES</td>
-                                <td>TBA</td>
-                            </tr>
+                        <tbody id="eventlist"> 
+                        <!-- Auto appends calendar events from calinit.js --> 
                         </tbody>
                     </table>
+
                 </div>
-            </div><!-- /row -->
-            <div class="row center">
-                <div class="col-2 bottom-12">
-                    <a class="button outline green">View Full Calendar</a>
+
+                <div class="col-4 top-5 bottom-13">
+                    <a href="CALENDARLINK" target="_blank" class="button outline green">View full calendar</a>
                 </div>
             </div>
-        </div><!-- /container -->
+        </div>
     </section>
+    <!-- /calendar            ******** IMPORTANT: this section requires calinit.js ********* --> 
 
     <section class="newsletter">
         <div class="container">
@@ -224,14 +214,13 @@
                 </div>
             </div>
         </div>
-        
-    </section>
+    </section><!-- /newsletter -->
 
     <section class="helmsley">
         <div class="container">
             <div class="row center">
                 <div class="col-10 top-8">
-                    <i>c</i><!-- /heart icon placeholder -->
+                    <i>c</i>
                 </div>
                 <div class="col-10 bottom-9">
                     <p>Made with support from the Helmsley Trust</p>
@@ -244,39 +233,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-1 top-8">
-                    <img src="img/.png" />
+                    <img src="img/icon_short_white.svg" />
                 </div>
                 <div class="col-1 col-offset-6 top-8 between">
-                    <div class="icon icon-github"></div>
-                    <div class="icon icon-twitter"></div>
-                    <div class="icon icon-vimeo"></div>
+                    <a href=""><div class="icon icon-github"></div></a>
+                    <a href=""><div class="icon icon-twitter"></div></a>
+                    <a href=""><div class="icon icon-vimeo"></div></a>
                 </div>
                 <div class="col-1 col-offset-7 top-8 bottom-8">
                     <h5 class="bottom-4">About</h5>
                     <ul>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Donate</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="about.html">Team</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </div>
                 <div class="col-1 top-8 bottom-8">
                     <h5 class="bottom-4">Info</h5>
                     <ul>
-                        <li><a href="#">Work</a></li>
-                        <li><a href="#">Discuss</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Related</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="">Discuss</a></li>
+                        <li><a href="community.html#events">Events</a></li>
+                        <li><a href="">Related</a></li>
                     </ul>
                 </div>
                 <div class="col-1 top-8 bottom-8">
                     <h5 class="bottom-4">Work</h5>
                     <ul>
-                        <li><a href="#">Packages</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Use Cases</a></li>
-                        <li><a href="#">Resources</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="use_cases.html">Use Cases</a></li>
+                        <li><a href="resources.html">Resources</a></li>
                     </ul>
                 </div>
                 <div class="col-2 top-8 bottom-8">
@@ -324,6 +313,10 @@
             </div>
         </div>
     </section><!-- /tutorial -->
+
+    <!-- Loads calendar authorization and funcionality -->
+    <script type="text/javascript" src="js/calinit.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 
 </body>
 </html>
