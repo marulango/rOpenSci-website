@@ -8,12 +8,15 @@ $(document).ready(function(){
     var subitem = $('.subitem').hide()
 
     closingPanel.click(function(){
-        $this = $(this);
-        $target = $this.find('.subitem')
+        var $this = $(this);
+        var $target = $this.find('.subitem')
 
         if ($target){
             subitem.removeClass('active').slideUp()
             $target.addClass('active').slideDown()
+        } else {
+            subitem.addClass('active').slideDown()
+            $target.removeClass('active').slideUp()
         }
     })
 
