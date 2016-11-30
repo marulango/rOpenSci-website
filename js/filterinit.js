@@ -4,7 +4,7 @@ $(document).ready(function(){
         wrapper: false
     })
 
-    var closingPanel = $('.sidebar > ul li')
+    var closingPanel = $('.subnav > ul li')
     var subitem = $('.subitem').hide()
 
     closingPanel.click(function(){
