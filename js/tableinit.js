@@ -19,7 +19,7 @@ $(document).ready( function () {
         }
     });
 
-    $(radio).change(function () {
+    $(radio).change(function() {
         oTable.draw();
     });
 
