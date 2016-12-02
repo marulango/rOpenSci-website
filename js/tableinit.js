@@ -1,5 +1,6 @@
 $(document).ready( function () {
     var radio = $('input[type=radio]')
+    var checkbox = $('input[type=checkbox]')
 
     var oTable = $('#packagestable').DataTable({
         "info": false, // won't display showed entries of total
@@ -23,48 +24,43 @@ $(document).ready( function () {
         oTable.draw();
     });
 
-} );
+    $(checkbox).change(function() {
+        oTable.draw();
+    });
 
+} );
 
 
 /* Custom filtering function which will filter data in column four between two values */
 $.fn.dataTableExt.afnFiltering.push(
-  function (oSettings, aData, iDataIndex) {
-    var dataPub = $('input[type=radio].dataPub')
-    var access = $('input[type=radio].access')
-    var literature = $('input[type=radio].literature')
-    var tools = $('input[type=radio].datatools')
-    var geospat = $('input[type=radio].geospatial')
-    var db = $('input[type=radio].db')
-    var dataviz = $('input[type=radio].dataviz')
-    var altmet = $('input[type=radio].altmetrics')
-    var scaleprod = $('input[type=radio].scaleprod')
-    var cran = $('a span.cran')
+    function (oSettings, aData, iDataIndex) {
+        var radio = $('input[type=radio]') //defines radio as variable to be able to get class
+        var cran = $('input[type=checkbox]')
+        var selected = $('input[type=radio]:checked')
+        var $class = selected.attr('class')
 
-    var element = $(oSettings.aoData[iDataIndex].nTr); //defines table row as element
-    // TODO: checked class should be filtered and append cran or early dev
+        if (cran.is(':checked')) {
+            var available = $('a .cran')
+            var parent = available.parent().parent().parent() //…Yeah, I know. 
+            parent.addClass('available')
 
-    //Also TODO: Refactor because this is nasty. Replace for loop and array
-    if ( (dataPub).is(':checked') ){
-        return element.is('.dataPub') || ! dataPub;
-    } else if ( (access).is(':checked') ){
-        return element.is('.access') || ! access;
-    } else if ( (literature).is(':checked') ){
-        return element.is('.literature') || ! literature;
-    } else if ( (tools).is(':checked') ){
-        return element.is('.datatools') || ! tools;
-    } else if ( (geospat).is(':checked') ){
-        return element.is('.geospatial') || ! geospat;
-    } else if ( (db).is(':checked') ){
-        return element.is('.db') || ! db;
-    } else if ( (dataviz).is(':checked') ){
-        return element.is('.dataviz') || ! dataviz;
-    } else if ( (altmet).is(':checked') ){
-        return element.is('.altmet') || ! altmet;
-    } else if ( (scaleprod).is(':checked') ){
-        return element.is('.scaleprod') || ! scaleprod;
-    } else {
-        return element
-    }
+            var element = $(oSettings.aoData[iDataIndex].nTr).hasClass('available');
+            if ( $class === 'all'){
+                return element
+            }
+            else {
+                return element.is('.' + $class) || ! $class
+            }
+        } else {
+            var element = $(oSettings.aoData[iDataIndex].nTr)
+            if ( $class === 'all'){
+                return element
+            }
+            else {
+                return element.is('.' + $class) || ! $class
+            }
+        }
+
+
 });
 
