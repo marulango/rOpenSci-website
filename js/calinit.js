@@ -99,6 +99,7 @@ function createTr(event) {
         var summary = event.summary
     }
 
+    //TODO: Invite self to calendar event to create attendees array and print that :D
     var linkNode = document.createElement('a')
     var htmlLink = event.htmlLink 
     linkNode.href = htmlLink
@@ -106,13 +107,26 @@ function createTr(event) {
     linkNode.appendChild(summaryContent)
 
     if (event.description == null  ) {
-        var details = 'N/A'
+        var details = 'TBA'
     } else {
         var details = event.description
     }
 
+    var attendees = event.attendees
+    var name = '';
+    if ( attendees == null ) {
+        var name = 'TBA'
+    }
+    for ( i = 1;  i < attendees.length; i++ ){
+        if ( i < attendees.length - 1 ) {
+            name = name + attendees[i].displayName + ', '
+        } else if( i < attendees.length ) {
+            name = name + attendees[i].displayName 
+        }
+    }
+
     if (event.location == null  ) {
-        var location = 'N/A'
+        var location = 'TBA'
     } else {
         var location = event.location
     }
@@ -123,7 +137,7 @@ function createTr(event) {
     td.appendChild(linkNode)
     trNode.appendChild(td);
 
-    var tdNodes = [start, location, details];
+    var tdNodes = [start, location, name, details];
 
     for (var i in tdNodes) {
         var content = tdNodes[i];
