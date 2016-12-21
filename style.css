@@ -435,6 +435,13 @@ q:before, q:after {
 }nav ul li a{
   color: #c6deff;
   text-decoration: none;
+}.regular {
+    padding-left: 15px;
+    margin-top: 20px;
+    font-size: .85rem
+}.regular li{
+  list-style: disc;
+  padding-left: 10px;
 }.label {
     text-transform: uppercase;
     font-size: .68rem;
@@ -452,6 +459,18 @@ q:before, q:after {
   background-color: #dfe3eb;
 }.label.bioc{
   background-color: #3d98ff;
+}.technote {
+    text-transform: uppercase;
+    font-size: .68rem;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 2px 6px;
+    line-height: 1.2rem;
+    margin: 20px 0 10px 0;
+    background-color: #f17183;
+    color: white;
+    display: table; /* So it wont break in IE */
+
 }.thead {
     border-bottom: 1px solid #edf1f8;
     padding-bottom: 15px;
