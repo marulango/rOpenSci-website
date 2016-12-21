@@ -4,6 +4,31 @@ $(document).ready(function(){
         wrapper: false
     })
 
+    var array = []
+    var puchi = []
+    var h3 = $('h3')
+    var h4 = $('h4')
+
+    var ul = document.createElement('ul')
+
+    for (var i = 0; i < h3.length; i++) {
+        array.push(h3[i].innerText);
+        liH3 = h3[i].innerText
+        var mainLi = document.createElement('li')
+        mainLi.innerHTML = liH3
+        console.log(mainLi)
+    }
+
+    if ( h3.next().is('h4') ){
+        for ( var i = 0; i < h4.length; i++ ){
+            liContent = h4[i].innerText
+            var innerLi = document.createElement('li')
+            innerLi.innerHTML = liContent
+            console.log(innerLi)
+        } 
+    }
+
+
     var closingPanel = $('.sidebar > ul li')
     var subitem = $('.subitem').hide()
 
