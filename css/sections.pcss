@@ -12,10 +12,16 @@
     & h1 {
         color: white;
     }
-    & small {
-        font-size: .87rem;
+    & a {
         color: #bfd8fa;
-        text-transform: uppercase;
+        text-decoration: none;
+        &:hover {
+            color: white;
+        }
+        & small {
+            font-size: .87rem;
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -428,6 +434,7 @@ article {
         font-size: .75rem;
     }
     & ul {
+        text-align: left;
         & li {
             line-height: 1.3rem;
             & a {

@@ -126,11 +126,23 @@ a.button {
         padding: 15px 30px;
         background-color: var(--main_button);
         color: white;
+        &:hover {
+            box-shadow: 0 0 5px #23ff2d;
+        }
+        &:active {
+            background-color: #01c10a;
+        }
     }
     &.alt {
         padding: 15px 30px;
         background-color: var(--main_link);
         color: white;
+        &:hover {
+            box-shadow: 0 0 5px var(--main_link);
+        }
+        &:active {
+            background-color: #0978f6;
+        }
     }
     &.outline {
         border: 1px solid;
