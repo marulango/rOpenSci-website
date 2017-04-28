@@ -60,7 +60,6 @@ $.fn.dataTableExt.afnFiltering.push(
                 return element.is('.' + $class) || ! $class
             }
         }
-
-
-});
+    }
+);
 
